@@ -364,6 +364,50 @@ nav a.active {
   filter: brightness(1.15);
 }
 
+.project-card {
+  display: block;
+  background: #fff;
+  border-radius: 14px;
+  padding: 20px;
+  text-decoration: none; /* remove link underline */
+  color: inherit;        /* use normal text color */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.project-card h3 {
+  margin: 16px 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-card h3 i {
+  font-size: 14px;
+  color: rgb(108, 5, 242);
+  border: 1px solid rgb(108, 5, 242);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover h3 i {
+  background: rgb(108, 5, 242);
+  color: #fff;
+}
+
+
 .site-footer {
   background: #fbfbff;
   color: #5b5f66;

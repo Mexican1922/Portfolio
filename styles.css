@@ -375,19 +375,49 @@ main {
   z-index: 1;
 }
 
-.project-card h3 a {
-  font-size: 14px;
-  text-decoration: none;
-  color: rgb(108, 5, 242); /* purple accent */
-  width: 18px;
-  height: 18px;
-  border: 1px solid rgb(108, 5, 242);
-  border-radius: 50%;
+.project-card {
+  display: block;
+  background: #f3f3f3;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+  color: inherit;        /* inherit text color */
+  text-decoration: none; /* remove underline */
 }
 
-.project-card h3 a:hover {
+.project-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+}
+
+.project-card h3 {
+  margin: 16px 0 8px;
+  font-size: 18px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-card h3 i {
+  font-size: 14px;
+  color: rgb(108, 5, 242);
+  border: 1px solid rgb(108, 5, 242);
+  border-radius: 50%;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+}
+
+.project-card:hover h3 i {
+  background: rgb(108, 5, 242);
   color: #fff;
-  background-color: rgb(108, 5, 242);
 }
 
 .project-card p {
