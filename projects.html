@@ -1,145 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Portfolio</title>
-  <link rel="stylesheet" href="projects.css">
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <!-- Font Awesome-->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
-</head>
-<body>
-  <nav>
-  <div>
-    <a href="index.html" class="logo">
-      <strong>ValentineAZOLIBE</strong><span class="nav_dot"></span>
-    </a>
-  </div>
-
-  <!-- Hidden checkbox for hamburger toggle -->
-  <input type="checkbox" id="menu-toggle" hidden>
-  <label for="menu-toggle" class="hamburger" aria-label="Toggle Menu">
-    <span></span>
-    <span></span>
-    <span></span>
-  </label>
-
-  <ul class="nav-links">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="projects.html"  class="active">Projects</a></li>
-    <li><a href="about.html">About</a></li>
-  </ul>
-
-  <a href="git.html" class="contact-icon">
-    <img src="Images/customer-service.png" alt="Get In Touch Icon">
-  </a>
-</nav>
-
-<header>
-  <div class="hero">
-    <h1 class="hero__title" aria-label="My Best Creations">
-      My<span style="color: rgb(108, 5, 242);">Best</span>Creations
-    </h1>
-    <p class="hero__greeting">
-      I discovered frontend development back in university, and my passion grew stronger when I trained at Aptech.  
-      Today, I focus on creating clean, modern, and user-friendly web applications.  
-      Every project is more than code, it’s a story brought to life.
-    </p>
-  </div>
-</header>
-<main>
-    <section>
-  <div class="projects">
-
-    <a href="https://auto-hub-gamma.vercel.app" target="_blank" class="project-card sticky-card">
-      <div class="project-image">
-        <img src="Images/Screenshot 2025-09-15 111949.png" alt="Auto Hub Project">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects - Valentine Azolibe</title>
+    <link rel="stylesheet" href="projects.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <nav>
+      <div>
+        <a href="index.html" class="logo">
+          <strong>ValentineAZOLIBE</strong><span class="nav_dot"></span>
+        </a>
       </div>
-      <h3>
-        Auto Hub 
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </h3>
-      <p>Auto parts store with clean design and product browsing.</p>
-    </a>
 
-    <a href="https://villaagency-seven.vercel.app/" target="_blank" class="project-card sticky-card">
-      <div class="project-image">
-        <img src="Images/port.png" alt="Villa Agency Project">
-      </div>
-      <h3>
-        Villa Agency 
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </h3>
-      <p>Real estate website showcasing properties with modern UI.</p>
-    </a>
+      <input type="checkbox" id="menu-toggle" hidden />
+      <label for="menu-toggle" class="hamburger" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+      </label>
 
-    <a href="https://weight-loss-rose.vercel.app" target="_blank" class="project-card sticky-card">
-      <div class="project-image">
-        <img src="Images/weight.png" alt="Weight Loss Project">
-      </div>
-      <h3>
-        Weight Loss 
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </h3>
-      <p>Health and fitness platform for tracking weight loss goals.</p>
-    </a>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="projects.html" class="active">Projects</a></li>
+        <li><a href="about.html">About</a></li>
+        <li>
+          <a
+            href="#"
+            class="resume-link"
+            onclick="alert('Upload your resume PDF and link it here!')"
+            >Resume</a
+          >
+        </li>
+      </ul>
 
-    <a href="https://space-rho-pearl.vercel.app" target="_blank" class="project-card sticky-card">
-      <div class="project-image">
-        <img src="Images/space.png" alt="Space Project">
-      </div>
-      <h3>
-        Space App 
-        <i class="fas fa-arrow-up-right-from-square"></i>
-      </h3>
-      <p>Interactive space exploration website with modern visuals.</p>
-    </a>
-
-  </div>
-</section>
-</main>
-<footer class="site-footer" aria-label="Footer">
-  <div class="footer-inner">
-    <nav class="footer-nav" aria-label="Footer links">
-      <a href="home.html" class="footer-link active">Home</a>
-      <a href="projects.html" class="footer-link">Projects</a>
-      <a href="about.html" class="footer-link">About</a>
-      <a href="git.html" class="footer-link">Contact</a>
+      <a href="git.html" class="contact-icon">
+        <img src="Images/customer-service.png" alt="Get In Touch Icon" />
+      </a>
     </nav>
 
-    <div class="footer-actions">
-      <a href="git.html" class="btn btn-primary">Get In Touch</a>
-      <a href="projects.html" class="btn btn-outline">Browse Projects</a>
-    </div>
+    <header>
+      <div class="hero">
+        <h1 class="hero__title" aria-label="My Best Creations">
+          My<span style="color: rgb(108, 5, 242)">Best</span>Creations
+        </h1>
+        <p class="hero__greeting">
+          I discovered frontend development back in university, and my passion
+          grew stronger when I trained at Aptech. Today, I focus on creating
+          clean, modern, and user-friendly web applications using React, Vue.js,
+          and modern JavaScript. Every project is more than code—it's a story
+          brought to life.
+        </p>
+      </div>
+    </header>
 
-    <div class="footer-social">
-      <a href="https://instagram.com/iamazolibe" target="_blank" class="social-icon instagram" aria-label="Instagram">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5-5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3-3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2z"/>
-        </svg>
-      </a>
-      <a href="https://www.linkedin.com/in/chibuzor-azolibe-45578b323" target="_blank" class="social-icon linkedin" aria-label="LinkedIn">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-          <path d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0H13v2.2c.5-.9 2-2 4.5-2 4.2 0 5 2.8 5 6.4V24h-5v-6.4c0-1.9-.04-4.4-3-4.4-3 0-3.5 2-3.5 4.2V24h-5V8z"/>
-        </svg>
-      </a>
-      <a href="https://github.com/Mexican1922" target="_blank" class="social-icon github" aria-label="GitHub">
-  <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
-    <path d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.41 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.39.97.1-.75.41-1.26.74-1.55-2.55-.29-5.23-1.27-5.23-5.65 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.39-2.69 5.36-5.25 5.64.42.37.79 1.1.79 2.22 0 1.6-.01 2.89-.01 3.28 0 .31.21.67.8.55A10.99 10.99 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"/>
-  </svg>
-</a>
+    <main>
+      <section>
+        <div class="projects">
+          <!-- React Projects -->
+          <a
+            href="https://ticket-app-react.onrender.com"
+            target="_blank"
+            class="project-card sticky-card"
+          >
+            <div class="project-badge react">React</div>
+            <div class="project-image">
+              <img
+                src="Images/Ticket(React).png"
+                alt="Ticket Management React"
+                onerror="this.src='Images/placeholder.png'"
+              />
+            </div>
+            <h3>
+              Ticket Management (React)
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p>
+              Full-stack ticket management system built with React, featuring
+              real-time updates, CRUD operations, and intuitive user interface
+              for tracking support tickets.
+            </p>
+          </a>
 
-    </div>
+          <a
+            href="https://ticket-app-vue.onrender.com"
+            target="_blank"
+            class="project-card sticky-card"
+          >
+            <div class="project-badge vue">Vue.js</div>
+            <div class="project-image">
+              <img
+                src="Images/Ticket.png"
+                alt="Ticket Management Vue"
+                onerror="this.src='Images/placeholder.png'"
+              />
+            </div>
+            <h3>
+              Ticket Management (Vue.js)
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p>
+              Vue.js implementation of the ticket management system,
+              demonstrating framework versatility with reactive components and
+              efficient state management.
+            </p>
+          </a>
 
-    <div class="footer-copy">
-      <span>©2025 All Rights Reserved.</span>
-      <span>Made with ♥ by Valentine</span>
-    </div>
-  </div>
-</footer>
+          <a
+            href="https://audiophile-tvvc.onrender.com"
+            target="_blank"
+            class="project-card sticky-card"
+          >
+            <div class="project-badge react">React</div>
+            <div class="project-image">
+              <img
+                src="Images/audiophile.png"
+                alt="Audiophile E-commerce"
+                onerror="this.src='Images/placeholder.png'"
+              />
+            </div>
+            <h3>
+              Audiophile E-commerce
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p>
+              Premium audio equipment e-commerce platform built with React.
+              Features include product browsing, shopping cart, checkout flow,
+              and responsive design.
+            </p>
+          </a>
 
-    
-</body>
+          <!-- Full-Stack Web Apps -->
+          <a
+            href="https://animeloop-5hiw.onrender.com"
+            target="_blank"
+            class="project-card sticky-card"
+          >
+            <div class="project-badge fullstack">Full-Stack</div>
+            <div class="project-image">
+              <img
+                src="Images/animeloop.png"
+                alt="AnimeLoop"
+                onerror="this.src='Images/placeholder.png'"
+              />
+            </div>
+            <h3>
+              AnimeLoop
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p>
+              Anime streaming platform with modern UI, search functionality,
+              dynamic content loading, and user-friendly navigation for anime
+              enthusiasts.
+            </p>
+          </a>
+
+          <a
+            href="https://soldierweb.onrender.com"
+            target="_blank"
+            class="project-card sticky-card"
+          >
+            <div class="project-badge fullstack">Full-Stack</div>
+            <div class="project-image">
+              <img src="Images/army.png" alt="SoldierWeb" />
+            </div>
+            <h3>
+              SoldierWeb
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p>
+              Military-themed web application featuring robust backend
+              architecture, user authentication, and comprehensive content
+              management system.
+            </p>
+          </a>
+
+          <!-- Frontend Projects -->
+          <a
+            href="https://weight-loss-rose.vercel.app"
+            target="_blank"
+            class="project-card sticky-card"
+          >
+            <div class="project-badge frontend">Frontend</div>
+            <div class="project-image">
+              <img src="Images/weight.png" alt="Weight Loss Project" />
+            </div>
+            <h3>
+              Weight Loss Platform
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p>
+              Health and fitness platform for tracking weight loss goals with
+              interactive charts, progress monitoring, and motivational
+              features.
+            </p>
+          </a>
+
+          <a
+            href="https://space-rho-pearl.vercel.app"
+            target="_blank"
+            class="project-card sticky-card"
+          >
+            <div class="project-badge frontend">Frontend</div>
+            <div class="project-image">
+              <img src="Images/space.png" alt="Space Project" />
+            </div>
+            <h3>
+              Space Exploration
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p>
+              Interactive space exploration website with stunning visuals,
+              smooth animations, and educational content about the cosmos.
+            </p>
+          </a>
+
+          <a
+            href="https://auto-hub-gamma.vercel.app"
+            target="_blank"
+            class="project-card sticky-card"
+          >
+            <div class="project-badge frontend">Frontend</div>
+            <div class="project-image">
+              <img
+                src="Images/Screenshot 2025-09-15 111949.png"
+                alt="Auto Hub Project"
+              />
+            </div>
+            <h3>
+              Auto Hub
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p>
+              Auto parts e-commerce store featuring clean design, intuitive
+              product browsing, filtering system, and responsive layout.
+            </p>
+          </a>
+
+          <a
+            href="https://villaagency-seven.vercel.app/"
+            target="_blank"
+            class="project-card sticky-card"
+          >
+            <div class="project-badge frontend">Frontend</div>
+            <div class="project-image">
+              <img src="Images/port.png" alt="Villa Agency Project" />
+            </div>
+            <h3>
+              Villa Agency
+              <i class="fas fa-arrow-up-right-from-square"></i>
+            </h3>
+            <p>
+              Real estate website showcasing luxury properties with modern UI,
+              property listings, detailed views, and contact forms.
+            </p>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer" aria-label="Footer">
+      <div class="footer-inner">
+        <nav class="footer-nav" aria-label="Footer links">
+          <a href="index.html" class="footer-link">Home</a>
+          <a href="projects.html" class="footer-link active">Projects</a>
+          <a href="about.html" class="footer-link">About</a>
+          <a href="git.html" class="footer-link">Contact</a>
+        </nav>
+
+        <div class="footer-actions">
+          <a href="git.html" class="btn btn-primary">Get In Touch</a>
+          <a href="projects.html" class="btn btn-outline">Browse Projects</a>
+        </div>
+
+        <div class="footer-social">
+          <a
+            href="https://instagram.com/iamazolibe"
+            target="_blank"
+            class="social-icon instagram"
+            aria-label="Instagram"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5-5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3-3 0 0 0-3-3H7zm5 3a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm0 2.2A2.8 2.8 0 1 0 14.8 12 2.8 2.8 0 0 0 12 9.2z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://www.linkedin.com/in/chibuzor-azolibe-45578b323"
+            target="_blank"
+            class="social-icon linkedin"
+            aria-label="LinkedIn"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M4.98 3.5C4.98 4.88 3.86 6 2.5 6S0 4.88 0 3.5 1.12 1 2.5 1 4.98 2.12 4.98 3.5zM0 8h5v16H0V8zm7.5 0H13v2.2c.5-.9 2-2 4.5-2 4.2 0 5 2.8 5 6.4V24h-5v-6.4c0-1.9-.04-4.4-3-4.4-3 0-3.5 2-3.5 4.2V24h-5V8z"
+              />
+            </svg>
+          </a>
+          <a
+            href="https://github.com/Mexican1922"
+            target="_blank"
+            class="social-icon github"
+            aria-label="GitHub"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 .5C5.65.5.5 5.65.5 12c0 5.1 3.29 9.41 7.86 10.95.58.11.79-.25.79-.56 0-.28-.01-1.02-.02-2-3.2.7-3.88-1.54-3.88-1.54-.53-1.34-1.29-1.7-1.29-1.7-1.06-.73.08-.72.08-.72 1.17.08 1.78 1.2 1.78 1.2 1.04 1.77 2.72 1.26 3.39.97.1-.75.41-1.26.74-1.55-2.55-.29-5.23-1.27-5.23-5.65 0-1.25.45-2.28 1.19-3.08-.12-.29-.52-1.46.11-3.05 0 0 .97-.31 3.18 1.18a11 11 0 0 1 5.8 0c2.2-1.49 3.17-1.18 3.17-1.18.63 1.59.23 2.76.11 3.05.74.8 1.19 1.83 1.19 3.08 0 4.39-2.69 5.36-5.25 5.64.42.37.79 1.1.79 2.22 0 1.6-.01 2.89-.01 3.28 0 .31.21.67.8.55A10.99 10.99 0 0 0 23.5 12c0-6.35-5.15-11.5-11.5-11.5z"
+              />
+            </svg>
+          </a>
+        </div>
+
+        <div class="footer-copy">
+          <span>©2025 All Rights Reserved.</span>
+          <span>Made with ♥ by Valentine</span>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
