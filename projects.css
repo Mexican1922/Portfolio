@@ -42,6 +42,17 @@ nav strong {
   align-items: center;
 }
 
+.logo strong {
+  /* APPLY THE NEW FONT HERE */
+  font-family: "Great Vibes", cursive;
+
+  font-weight: 400; /* Script fonts look better with a lighter weight */
+  color: #1a1a1a;
+  font-size: 28px; /* Slightly larger size to show off the script */
+  letter-spacing: 0.5px; /* Adjust or remove as needed */
+  line-height: 1; /* Helps align script fonts */
+}
+
 .nav_dot {
   display: inline-block;
   width: 5px;

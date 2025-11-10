@@ -1,5 +1,7 @@
 /* Reset */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -7,7 +9,8 @@
 
 body {
   height: 100%;
-  font-family: 'Poppins', system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-family: "Poppins", system-ui, -apple-system, "Segoe UI", Roboto,
+    sans-serif;
   color: #1a1a1a;
   background: #fff;
   margin: 0 auto;
@@ -26,17 +29,28 @@ nav {
   position: sticky;
   top: 0;
   background: #fff;
-  box-shadow: 0 1px 0 rgba(0,0,0,.04);
+  box-shadow: 0 1px 0 rgba(0, 0, 0, 0.04);
   z-index: 10;
 }
 
 nav strong {
   font-weight: 700;
   color: #1a1a1a;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
   font-size: 20px;
   display: inline-flex;
   align-items: center;
+}
+
+.logo strong {
+  /* APPLY THE NEW FONT HERE */
+  font-family: "Great Vibes", cursive;
+
+  font-weight: 400; /* Script fonts look better with a lighter weight */
+  color: #1a1a1a;
+  font-size: 28px; /* Slightly larger size to show off the script */
+  letter-spacing: 0.5px; /* Adjust or remove as needed */
+  line-height: 1; /* Helps align script fonts */
 }
 
 .nav_dot {
@@ -61,7 +75,7 @@ nav a {
   color: #2a2a2a;
   font-weight: 500;
   font-size: 14px;
-  letter-spacing: .4px;
+  letter-spacing: 0.4px;
   padding: 6px 0;
   transition: color 0.2s ease;
 }
@@ -86,9 +100,8 @@ nav a.active {
   font-weight: 700;
   color: #1a1a1a;
   font-size: 20px;
-  letter-spacing: .5px;
+  letter-spacing: 0.5px;
 }
-
 
 .contact-icon img {
   width: 28px;
@@ -96,7 +109,7 @@ nav a.active {
   object-fit: contain;
   display: block;
   filter: grayscale(20%) brightness(1);
-  opacity: .85;
+  opacity: 0.85;
   cursor: pointer;
   transition: all 0.3s ease;
 }
@@ -138,7 +151,7 @@ nav a.active {
     align-items: flex-start;
     gap: 16px;
     padding: 20px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     display: none;
   }
@@ -159,7 +172,6 @@ nav a.active {
     transform: rotate(-45deg) translate(5px, -5px);
   }
 }
-
 
 /* Header / hero section */
 .hero {
@@ -182,11 +194,11 @@ nav a.active {
   margin: 0 0 12px;
   font-size: 18px;
   color: #555;
-  letter-spacing: .2px;
+  letter-spacing: 0.2px;
 }
 
 .hero__title {
-  font-size: 64px;          /* large headline like in screenshot */
+  font-size: 64px; /* large headline like in screenshot */
   line-height: 0.95;
   font-weight: 900;
   margin: 6px 0 14px;
@@ -204,17 +216,16 @@ nav a.active {
   line-height: 1.5;
   margin: 0 0 22px;
   max-width: 500px;
-  
 }
 
 .title_dot {
-    display: inline-block;
-    width: 10px;
-    height: 10px;
-    background: rgb(108, 5, 242);
-    border-radius: 50%;
-    margin-left: 5px;
-    vertical-align: middle;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  background: rgb(108, 5, 242);
+  border-radius: 50%;
+  margin-left: 5px;
+  vertical-align: middle;
 }
 
 .hero__cta {
@@ -249,9 +260,8 @@ nav a.active {
   object-fit: contain;
 }
 
-
 .icon_img {
-    width: 5%;
+  width: 5%;
 }
 
 .btn {
@@ -260,7 +270,7 @@ nav a.active {
   border-radius: 999px;
   font-weight: 600;
   text-decoration: none;
-  transition: transform .2s ease, background .2s ease, color .2s ease;
+  transition: transform 0.2s ease, background 0.2s ease, color 0.2s ease;
   border: 2px solid transparent;
 }
 
@@ -299,7 +309,7 @@ nav a.active {
   background: #f7f7fb;
   display: grid;
   place-items: center;
-  box-shadow: 0 20px 40px rgba(0,0,0,.05);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
   border: 8px solid #fff;
 }
 
@@ -321,16 +331,21 @@ nav a.active {
   .hero__title {
     font-size: 72px;
   }
-  .hero__right { 
-    order: -1; 
-    margin-bottom: 20px; 
+  .hero__right {
+    order: -1;
+    margin-bottom: 20px;
     margin-right: 0; /* reset */
   }
 }
 
 @media (max-width: 600px) {
-  .hero__title { font-size: 52px; }
-  .hero__subtitle { font-size: 16px; width: 90%;}
+  .hero__title {
+    font-size: 52px;
+  }
+  .hero__subtitle {
+    font-size: 16px;
+    width: 90%;
+  }
 }
 
 .site-footer {
@@ -409,9 +424,18 @@ nav a.active {
   height: 20px;
   fill: currentColor;
 }
-.social-icon.instagram:hover { color: #e4405f; transform: translateY(-1px); }
-.social-icon.linkedin:hover { color: #0a66c2; transform: translateY(-1px); }
-.social-icon.github:hover { color: #333; transform: translateY(-1px); }
+.social-icon.instagram:hover {
+  color: #e4405f;
+  transform: translateY(-1px);
+}
+.social-icon.linkedin:hover {
+  color: #0a66c2;
+  transform: translateY(-1px);
+}
+.social-icon.github:hover {
+  color: #333;
+  transform: translateY(-1px);
+}
 
 .footer-copy {
   grid-column: 1 / -1;
