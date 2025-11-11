@@ -345,6 +345,21 @@ nav a.active {
   transition: transform 0.5s ease, filter 0.5s ease;
 }
 
+/* Mobile */
+@media (max-width: 768px) {
+  .project-image {
+    background-attachment: fixed;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  .project-image img {
+    width: 150%;
+    transform: scale(0.6);
+  }
+}
+
 .project-card:hover .project-image img {
   transform: scale(1.08);
   filter: brightness(1.15);
@@ -392,56 +407,6 @@ nav a.active {
   position: sticky;
   top: 100px;
   margin-bottom: 80px;
-}
-
-/* --- */
-/* Responsive Project Card Adjustments */
-@media (max-width: 768px) {
-  /* Reduce side padding on the main project container */
-  .projects {
-    padding: 10px 10px;
-  }
-
-  /* Make project cards fill more of the screen width */
-  .project-card {
-    width: 100%;
-    /* Keep padding consistent or slightly reduced */
-    padding: 12px;
-  }
-
-  /* Adjust the image container for mobile */
-  .project-image {
-    /* Set a more compact aspect ratio for mobile view, e.g., square or vertical */
-    aspect-ratio: 4 / 3; /* This makes the image slightly more vertical than 16/9 */
-    /* If you want the height to be strictly based on viewport, you can use max-height */
-    /* max-height: 250px; */
-    border-radius: 10px;
-  }
-
-  /* Ensure the image itself covers the new aspect ratio */
-
-  /* Mobile specific adjustments for text */
-  .project-card h3 {
-    font-size: 16px;
-    margin-top: 12px;
-  }
-
-  .project-card p {
-    font-size: 13px;
-  }
-
-  /* Adjust badge position and size for mobile */
-  .project-badge {
-    top: 16px;
-    right: 16px;
-    padding: 4px 10px;
-    font-size: 11px;
-  }
-
-  /* Adjust sticky behavior for mobile if it's causing issues */
-  .sticky-card {
-    margin-bottom: 30px; /* Adjust spacing between cards */
-  }
 }
 
 /* Footer */
