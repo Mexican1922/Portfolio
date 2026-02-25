@@ -61,7 +61,7 @@ export default function ProjectsPage() {
             <p className="font-heading text-accent text-sm font-semibold tracking-widest uppercase mb-4">
               Portfolio
             </p>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-7xl tracking-tight mb-4">
+            <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-7xl tracking-tight mb-4">
               My
               <span className="gradient-text"> Best</span> Creations
               <span className="inline-block w-3 h-3 rounded-full bg-accent ml-2 align-middle" />
@@ -80,14 +80,14 @@ export default function ProjectsPage() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-28">
         {/* Filter tabs */}
         <ScrollReveal>
-          <div className="flex flex-wrap gap-2 mb-12">
+          <div className="filter-scroll flex gap-2 mb-10 sm:mb-12 pb-2 sm:pb-0 -mx-6 px-6 sm:mx-0 sm:px-0 sm:flex-wrap">
             {filters.map((filter) => (
               <button
                 key={filter}
                 onClick={() => setActiveFilter(filter)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter
-                    ? 'bg-accent text-white shadow-lg shadow-accent/25'
-                    : 'bg-surface-2 text-text-muted border border-border hover:border-accent/30 hover:text-text'
+                  ? 'bg-accent text-white shadow-lg shadow-accent/25'
+                  : 'bg-surface-2 text-text-muted border border-border hover:border-accent/30 hover:text-text'
                   }`}
               >
                 {filter}
@@ -177,8 +177,8 @@ export default function ProjectsPage() {
                           <span
                             key={tag}
                             className={`px-2.5 py-1 text-[10px] font-medium rounded-full border transition-colors ${tag === activeFilter
-                                ? 'bg-accent/15 text-accent-light border-accent/30'
-                                : 'bg-surface-3 text-text-dim border-border'
+                              ? 'bg-accent/15 text-accent-light border-accent/30'
+                              : 'bg-surface-3 text-text-dim border-border'
                               }`}
                           >
                             {tag}

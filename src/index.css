@@ -108,6 +108,7 @@ html {
   scroll-behavior: smooth;
   scrollbar-width: thin;
   scrollbar-color: var(--theme-scrollbar-thumb) var(--theme-scrollbar-track);
+  overflow-x: hidden;
 }
 
 body {
@@ -117,6 +118,17 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+/* Mobile horizontal scroll for filter tabs */
+.filter-scroll {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+}
+.filter-scroll::-webkit-scrollbar {
+  display: none;
 }
 
 ::selection {

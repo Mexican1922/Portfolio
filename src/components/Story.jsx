@@ -4,13 +4,13 @@ import ScrollReveal from './ScrollReveal'
 
 export default function Story() {
   return (
-    <section className="py-28 lg:py-36 relative overflow-hidden">
+    <section className="py-16 sm:py-28 lg:py-36 relative overflow-hidden">
       {/* Gradient accent */}
-      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] bg-accent/5 rounded-full blur-3xl" />
+      <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[300px] sm:w-[600px] h-[300px] sm:h-[600px] bg-accent/5 rounded-full blur-3xl" />
 
       <div className="relative z-10 max-w-4xl mx-auto px-6 lg:px-8">
         <ScrollReveal>
-          <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-10">
+          <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-8 sm:mb-10">
             My Story
             <span className="inline-block w-3 h-3 rounded-full bg-accent ml-2 align-middle" />
           </h2>

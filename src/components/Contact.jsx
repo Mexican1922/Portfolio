@@ -30,7 +30,7 @@ export default function Contact() {
             <p className="font-heading text-accent text-sm font-semibold tracking-widest uppercase mb-4">
               Contact
             </p>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-4">
+            <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4">
               Get In
               <span className="gradient-text"> Touch</span>
               <span className="inline-block w-3 h-3 rounded-full bg-accent ml-2 align-middle" />
@@ -44,7 +44,7 @@ export default function Contact() {
       </div>
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-28">
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 -mt-4">
+        <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16 -mt-4">
           {/* Contact Form */}
           <div className="lg:col-span-3">
             <ScrollReveal>
@@ -128,7 +128,7 @@ export default function Contact() {
           {/* Contact Info Sidebar */}
           <div className="lg:col-span-2">
             <ScrollReveal delay={0.2}>
-              <div className="glass-card rounded-2xl p-8 sticky top-28 space-y-8">
+              <div className="glass-card rounded-2xl p-6 sm:p-8 lg:sticky lg:top-28 space-y-8">
                 <h3 className="font-heading font-bold text-xl text-text">
                   Contact Info
                 </h3>
@@ -145,7 +145,7 @@ export default function Contact() {
                       <p className="text-xs text-text-dim uppercase tracking-wider mb-1">
                         Email
                       </p>
-                      <p className="text-sm text-text group-hover:text-accent-light transition-colors">
+                      <p className="text-sm text-text group-hover:text-accent-light transition-colors break-all sm:break-normal">
                         {socialLinks.email}
                       </p>
                     </div>

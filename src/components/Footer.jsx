@@ -52,7 +52,7 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="py-8 flex flex-col sm:flex-row items-center justify-between gap-6">
           {/* Nav links */}
-          <nav className="flex items-center gap-6">
+          <nav className="flex flex-wrap items-center gap-4 sm:gap-6">
             {footerNav.map((item) => (
               <Link
                 key={item.path}
@@ -82,7 +82,7 @@ export default function Footer() {
         </div>
 
         {/* Copyright */}
-        <div className="pb-6 flex items-center justify-between text-xs text-text-dim">
+        <div className="pb-6 flex flex-col sm:flex-row items-center justify-between gap-2 text-xs text-text-dim">
           <span>© {new Date().getFullYear()} All Rights Reserved.</span>
           <span className="flex items-center gap-1">
             Made with <Heart size={10} className="text-accent fill-accent" /> by Valentine

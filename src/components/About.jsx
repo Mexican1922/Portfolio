@@ -42,7 +42,7 @@ export default function About() {
             <p className="font-heading text-accent text-sm font-semibold tracking-widest uppercase mb-4">
               About Me
             </p>
-            <h1 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight mb-6">
+            <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6">
               Valentine
               <span className="gradient-text"> Azolibe</span>
               <span className="inline-block w-3 h-3 rounded-full bg-accent ml-2 align-middle" />
@@ -53,7 +53,7 @@ export default function About() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-28">
         {/* Bio + Skills side by side */}
-        <div className="grid lg:grid-cols-5 gap-12 lg:gap-16 -mt-8">
+        <div className="grid lg:grid-cols-5 gap-8 sm:gap-12 lg:gap-16 -mt-8">
           {/* Bio Text */}
           <div className="lg:col-span-3 space-y-5">
             <ScrollReveal>
@@ -143,7 +143,7 @@ export default function About() {
           {/* Skills sidebar */}
           <div className="lg:col-span-2">
             <ScrollReveal delay={0.2}>
-              <div className="glass-card rounded-2xl p-8 sticky top-28">
+              <div className="glass-card rounded-2xl p-6 sm:p-8 lg:sticky lg:top-28">
                 <h3 className="font-heading font-bold text-xl text-text mb-6">
                   Skills & Tools
                 </h3>
@@ -172,7 +172,7 @@ export default function About() {
         </div>
 
         {/* What I do — highlights */}
-        <div className="mt-24">
+        <div className="mt-16 sm:mt-24">
           <ScrollReveal>
             <h2 className="font-heading font-bold text-2xl sm:text-3xl tracking-tight mb-10">
               What I Do

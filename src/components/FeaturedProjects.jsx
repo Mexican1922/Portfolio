@@ -6,16 +6,16 @@ import { featuredProjects } from '../data/projects'
 
 export default function FeaturedProjects() {
   return (
-    <section className="py-28 lg:py-36 relative">
+    <section className="py-16 sm:py-28 lg:py-36 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         {/* Section Header */}
         <ScrollReveal>
-          <div className="flex items-end justify-between mb-16">
+          <div className="flex items-end justify-between mb-10 sm:mb-16">
             <div>
               <p className="font-heading text-accent text-sm font-semibold tracking-widest uppercase mb-3">
                 Featured Work
               </p>
-              <h2 className="font-heading font-extrabold text-4xl sm:text-5xl lg:text-6xl tracking-tight">
+              <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight">
                 Latest
                 <span className="gradient-text"> Projects</span>
                 <span className="inline-block w-3 h-3 rounded-full bg-accent ml-2 align-middle" />
@@ -56,7 +56,7 @@ export default function FeaturedProjects() {
                     </div>
 
                     {/* Content */}
-                    <div className="p-8 lg:p-12 flex flex-col justify-center">
+                    <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
                       <div className="flex items-center gap-3 mb-5">
                         <span className="badge-featured flex items-center gap-1">
                           <Star size={10} />
@@ -67,7 +67,7 @@ export default function FeaturedProjects() {
                         </span>
                       </div>
 
-                      <h3 className="font-heading font-bold text-2xl lg:text-3xl text-text mb-2 group-hover:text-accent-light transition-colors">
+                      <h3 className="font-heading font-bold text-xl sm:text-2xl lg:text-3xl text-text mb-2 group-hover:text-accent-light transition-colors">
                         {project.title}
                       </h3>
 

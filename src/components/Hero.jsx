@@ -45,9 +45,9 @@ export default function Hero() {
       <div className="absolute inset-0 dot-grid opacity-30" />
 
       {/* Animated orbs */}
-      <div className="absolute top-1/4 left-1/4 w-72 h-72 rounded-full animate-float" style={{ background: 'var(--theme-glow-2)', filter: 'blur(48px)' }} />
+      <div className="absolute top-1/4 left-1/4 w-40 sm:w-72 h-40 sm:h-72 rounded-full animate-float" style={{ background: 'var(--theme-glow-2)', filter: 'blur(48px)' }} />
       <div
-        className="absolute bottom-1/4 right-1/4 w-96 h-96 rounded-full animate-float"
+        className="absolute bottom-1/4 right-1/4 w-52 sm:w-96 h-52 sm:h-96 rounded-full animate-float"
         style={{ background: 'var(--theme-gradient-2)', filter: 'blur(48px)', animationDelay: '3s' }}
       />
 
@@ -80,7 +80,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
-              className="font-heading font-extrabold text-5xl sm:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight mb-6"
+              className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight mb-6"
             >
               <span className="gradient-text">Full-Stack</span>
               <br />
@@ -127,7 +127,7 @@ export default function Hero() {
               initial={{ opacity: 0, y: 20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="flex gap-10 mt-14 pt-8 border-t border-border"
+              className="flex gap-6 sm:gap-10 mt-10 sm:mt-14 pt-6 sm:pt-8 border-t border-border"
             >
               <div ref={stat1.ref}>
                 <p className="font-heading font-bold text-2xl text-text">
@@ -164,15 +164,15 @@ export default function Hero() {
             className="order-1 lg:order-2 flex justify-center"
           >
             <div className="relative">
-              {/* Rotating ring */}
-              <div className="absolute -inset-6 rounded-full border border-dashed border-accent/20 animate-spin-slow" />
-              <div className="absolute -inset-12 rounded-full border border-dashed border-accent-2/10 animate-spin-slow" style={{ animationDirection: 'reverse', animationDuration: '30s' }} />
+              {/* Rotating ring — hidden on mobile to prevent overflow */}
+              <div className="absolute -inset-6 rounded-full border border-dashed border-accent/20 animate-spin-slow hidden sm:block" />
+              <div className="absolute -inset-12 rounded-full border border-dashed border-accent-2/10 animate-spin-slow hidden sm:block" style={{ animationDirection: 'reverse', animationDuration: '30s' }} />
 
               {/* Glow behind */}
               <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 to-accent-2/20 blur-2xl scale-110" />
 
               {/* Avatar */}
-              <div className="relative w-64 h-64 sm:w-80 sm:h-80 rounded-full overflow-hidden border-2 border-border-light shadow-2xl">
+              <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-border-light shadow-2xl">
                 <img
                   src="/images/profile.jpg"
                   alt="Valentine Azolibe"
