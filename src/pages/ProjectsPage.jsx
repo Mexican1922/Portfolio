@@ -79,27 +79,25 @@ export default function ProjectsPage() {
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8 pb-28">
         {/* Filter tabs */}
-        <ScrollReveal>
-          <div className="filter-scroll flex gap-2 mb-10 sm:mb-12 pb-2 sm:pb-0 -mx-6 px-6 sm:mx-0 sm:px-0 sm:flex-wrap">
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                onClick={() => setActiveFilter(filter)}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${activeFilter === filter
-                  ? 'bg-accent text-white shadow-lg shadow-accent/25'
-                  : 'bg-surface-2 text-text-muted border border-border hover:border-accent/30 hover:text-text'
-                  }`}
-              >
-                {filter}
-                {activeFilter === filter && (
-                  <span className="ml-2 text-xs opacity-80">
-                    ({filtered.length})
-                  </span>
-                )}
-              </button>
-            ))}
-          </div>
-        </ScrollReveal>
+        <div className="filter-scroll flex gap-2 mb-10 sm:mb-12 pb-2 sm:pb-0 -mx-6 px-6 sm:mx-0 sm:px-0 sm:flex-wrap">
+          {filters.map((filter) => (
+            <button
+              key={filter}
+              onClick={() => setActiveFilter(filter)}
+              className={`px-4 sm:px-5 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-medium whitespace-nowrap transition-all duration-300 ${activeFilter === filter
+                ? 'bg-accent text-white shadow-lg shadow-accent/25'
+                : 'bg-surface-2 text-text-muted border border-border hover:border-accent/30 hover:text-text'
+                }`}
+            >
+              {filter}
+              {activeFilter === filter && (
+                <span className="ml-1.5 sm:ml-2 text-[10px] sm:text-xs opacity-80">
+                  ({filtered.length})
+                </span>
+              )}
+            </button>
+          ))}
+        </div>
 
         {/* Projects Grid — keyed by filter to force re-mount + animate */}
         <motion.div
