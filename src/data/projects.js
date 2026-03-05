@@ -29,6 +29,26 @@ export const featuredProjects = [
 
 export const otherProjects = [
   {
+    id: "stockflow",
+    title: "StockFlow",
+    description:
+      "Real-world inventory management SaaS with role-based access (Admin & Sales Staff), Firebase Auth (Google sign-in), Firestore live sync, product CRUD, supplier management, and multilingual support (EN/POR). Built for actual business use.",
+    image: "/images/stockflow.png",
+    url: "https://products-inventory-mgmt.vercel.app",
+    tags: ["React", "Firebase", "Full-Stack"],
+    badge: "firebase",
+  },
+  {
+    id: "finance-tracker",
+    title: "Finance Tracker",
+    description:
+      "Personal finance dashboard I built to solve my own money-management needs — and shipped for others to use too. Features real-time spending analytics, income/expense tracking, savings goals, financial health score, and bank sync. Powered by Firebase.",
+    image: "/images/finance-tracker.png",
+    url: "https://try-finance-tracker.vercel.app",
+    tags: ["React", "Firebase", "Full-Stack"],
+    badge: "firebase",
+  },
+  {
     id: "ticket-react",
     title: "Ticket Management",
     description:

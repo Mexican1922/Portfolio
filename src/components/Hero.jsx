@@ -35,7 +35,7 @@ function useCountUp(target, duration = 1800) {
 }
 
 export default function Hero() {
-  const stat1 = useCountUp(10)
+  const stat1 = useCountUp(12)
   const stat2 = useCountUp(2)
   const stat3 = useCountUp(3)
 

@@ -5,11 +5,12 @@ import ScrollReveal from '../components/ScrollReveal'
 import { featuredProjects, otherProjects } from '../data/projects'
 
 const allProjects = [...featuredProjects, ...otherProjects]
-const filters = ['All', 'Client Work', 'React', 'Vue.js', 'Full-Stack', 'Frontend']
+const filters = ['All', 'Client Work', 'Firebase', 'React', 'Vue.js', 'Full-Stack', 'Frontend']
 
 // Map filter name → matching badge values
 const badgeMap = {
   'Client Work': ['client'],
+  'Firebase': ['firebase'],
   'React': ['react'],
   'Vue.js': ['vue'],
   'Full-Stack': ['fullstack'],
@@ -150,7 +151,9 @@ export default function ProjectsPage() {
                                 ? 'Full-Stack'
                                 : project.badge === 'frontend'
                                   ? 'Frontend'
-                                  : 'Client Work'}
+                                  : project.badge === 'firebase'
+                                    ? '🔥 Firebase'
+                                    : 'Client Work'}
                         </span>
                       </div>
                     </div>
