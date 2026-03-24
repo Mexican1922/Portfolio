@@ -29,6 +29,16 @@ export const featuredProjects = [
 
 export const otherProjects = [
   {
+    id: "metermate",
+    title: "MeterMate",
+    description:
+      "A complete energy dashboard application allowing users to effortlessly set up their house and seamlessly join households. Features a sleek, modern, dark-themed UI, robust authentication, and real-time database management tailored for premium user experiences.",
+    image: "/images/metermate.jpeg",
+    url: "https://naija-metermate.vercel.app",
+    tags: ["React", "Next.js", "Full-Stack", "Supabase"],
+    badge: "fullstack",
+  },
+  {
     id: "stockflow",
     title: "StockFlow",
     description:
@@ -185,5 +195,5 @@ export const socialLinks = {
   email: "valentinechibuzor480@gmail.com",
   phone: "+2347049495832",
   resume:
-    "https://drive.google.com/file/d/1KHu894ohc9Emhd_8EOJA71N_QUpVN9mu/view?usp=drivesdk",
+    "https://drive.google.com/file/d/14lD9mBiDsS4UGcHWIrBFS8aCIi0FZb_v/view?usp=drivesdk",
 };

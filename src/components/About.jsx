@@ -31,8 +31,8 @@ export default function About() {
   return (
     <section className="relative">
       {/* Hero area */}
-      <div className="pt-32 pb-20 lg:pt-40 lg:pb-28 gradient-mesh">
-        <div className="absolute inset-0 dot-grid opacity-20" />
+      <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-28">
+        <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -44,7 +44,7 @@ export default function About() {
             </p>
             <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-6">
               Valentine
-              <span className="gradient-text"> Azolibe</span>
+              <span className="text-text"> Azolibe</span>
               <span className="inline-block w-3 h-3 rounded-full bg-accent ml-2 align-middle" />
             </h1>
           </motion.div>
@@ -58,7 +58,7 @@ export default function About() {
           <div className="lg:col-span-3 space-y-5">
             <ScrollReveal>
               <p className="text-text-muted text-lg leading-relaxed">
-                Hi, I'm <span className="text-text font-semibold">Valentine Azolibe</span> 👋 — a
+                Hi, I'm <span className="text-text font-semibold">Valentine Azolibe</span>, a
                 full-stack developer passionate about building clean, modern, and
                 user-friendly web applications.
               </p>
@@ -81,7 +81,7 @@ export default function About() {
                 <span className="text-accent-light font-medium">React</span> and{' '}
                 <span className="text-accent-light font-medium">Vue.js</span>,
                 with a strong foundation in modern JavaScript, Tailwind CSS, and
-                Node.js. I've worked on diverse projects — from{' '}
+                Node.js. I've worked on diverse projects from{' '}
                 <span className="text-text font-medium">
                   EdTech platforms with payment integration
                 </span>{' '}
@@ -97,7 +97,7 @@ export default function About() {
               <p className="text-text-muted text-lg leading-relaxed">
                 I enjoy solving problems with code, exploring new design trends,
                 and making ideas come alive on the web. Beyond coding, I'm curious,
-                creative, and always eager to learn and grow. 🚀
+                creative, and always eager to learn and grow.
               </p>
             </ScrollReveal>
 

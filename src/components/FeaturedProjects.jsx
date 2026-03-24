@@ -17,7 +17,7 @@ export default function FeaturedProjects() {
               </p>
               <h2 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight">
                 Latest
-                <span className="gradient-text"> Projects</span>
+                <span className="text-text"> Projects</span>
                 <span className="inline-block w-3 h-3 rounded-full bg-accent ml-2 align-middle" />
               </h2>
             </div>

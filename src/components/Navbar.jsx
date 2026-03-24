@@ -46,7 +46,7 @@ export default function Navbar() {
             <span className="font-heading font-bold text-xl tracking-tight text-text">
               Valentine
             </span>
-            <span className="font-heading font-bold text-xl tracking-tight gradient-text">
+            <span className="font-heading font-bold text-xl tracking-tight text-text">
               Codes
             </span>
             <span className="w-1.5 h-1.5 rounded-full bg-accent ml-0.5 group-hover:scale-150 transition-transform" />

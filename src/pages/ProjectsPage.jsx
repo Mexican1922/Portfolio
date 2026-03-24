@@ -51,8 +51,8 @@ export default function ProjectsPage() {
   return (
     <section className="relative">
       {/* Page Header */}
-      <div className="pt-32 pb-16 lg:pt-40 lg:pb-24 gradient-mesh">
-        <div className="absolute inset-0 dot-grid opacity-20" />
+      <div className="relative pt-32 pb-16 lg:pt-40 lg:pb-24">
+        <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -64,7 +64,7 @@ export default function ProjectsPage() {
             </p>
             <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-7xl tracking-tight mb-4">
               My
-              <span className="gradient-text"> Best</span> Creations
+              <span className="text-text"> Best</span> Creations
               <span className="inline-block w-3 h-3 rounded-full bg-accent ml-2 align-middle" />
             </h1>
             <p className="text-text-muted text-lg max-w-2xl leading-relaxed">
@@ -152,7 +152,7 @@ export default function ProjectsPage() {
                                 : project.badge === 'frontend'
                                   ? 'Frontend'
                                   : project.badge === 'firebase'
-                                    ? '🔥 Firebase'
+                                    ? ' Firebase'
                                     : 'Client Work'}
                         </span>
                       </div>

@@ -25,7 +25,7 @@ export default function Footer() {
           <div className="max-w-2xl">
             <h2 className="font-heading font-extrabold text-3xl sm:text-4xl lg:text-5xl tracking-tight mb-4">
               Let's build something
-              <span className="gradient-text"> amazing</span>
+              <span className="text-text"> amazing</span>
               <span className="inline-block w-2.5 h-2.5 rounded-full bg-accent ml-2 align-middle" />
             </h2>
             <p className="text-text-muted text-lg mb-8 leading-relaxed">

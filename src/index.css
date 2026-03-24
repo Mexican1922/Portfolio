@@ -166,11 +166,11 @@ body {
 /* ──────────────────────────────────────────
    Gradient Mesh Background
    ────────────────────────────────────────── */
-.gradient-mesh {
+. {
   position: relative;
 }
 
-.gradient-mesh::before {
+.::before {
   content: "";
   position: absolute;
   top: -20%;
@@ -186,7 +186,7 @@ body {
   z-index: 0;
 }
 
-.gradient-mesh::after {
+.::after {
   content: "";
   position: absolute;
   bottom: -10%;
@@ -282,7 +282,7 @@ body {
 /* ──────────────────────────────────────────
    Gradient Text
    ────────────────────────────────────────── */
-.gradient-text {
+.text-text {
   background: linear-gradient(
     135deg,
     var(--theme-accent) 0%,
@@ -293,7 +293,7 @@ body {
   background-clip: text;
 }
 
-.gradient-text-warm {
+.text-text-warm {
   background: linear-gradient(135deg, #c084fc 0%, #f472b6 50%, #fb923c 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;

@@ -42,7 +42,7 @@ export default function Story() {
 
           <ScrollReveal delay={0.3}>
             <p className="text-text-muted text-lg leading-relaxed">
-              Since then, I've gone beyond just building personal projects — I
+              Since then, I've gone beyond just building personal projects, I
               now build{' '}
               <span className="text-accent-light font-medium">
                 production-ready applications for real clients
@@ -81,7 +81,7 @@ export default function Story() {
                 projects
               </Link>{' '}
               reflect this journey, and they tell the story of how far I've come
-              — and how much further I'm excited to go 🚀
+              and how much further I'm excited to go
             </p>
           </ScrollReveal>
         </div>

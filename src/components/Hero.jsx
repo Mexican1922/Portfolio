@@ -40,7 +40,7 @@ export default function Hero() {
   const stat3 = useCountUp(3)
 
   return (
-    <section className="relative min-h-screen flex items-center pt-24 gradient-mesh overflow-hidden">
+    <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
       {/* Decorative grid dots */}
       <div className="absolute inset-0 dot-grid opacity-30" />
 
@@ -73,7 +73,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="text-text-muted text-lg mb-3"
             >
-              Hey, I&apos;m Valentine 👋
+              Hey, I&apos;m Valentine 
             </motion.p>
 
             <motion.h1
@@ -82,7 +82,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight mb-6"
             >
-              <span className="gradient-text">Full-Stack</span>
+              <span className="text-text">Full-Stack</span>
               <br />
               Developer
             </motion.h1>
@@ -169,7 +169,7 @@ export default function Hero() {
               <div className="absolute -inset-12 rounded-full border border-dashed border-accent-2/10 animate-spin-slow hidden sm:block" style={{ animationDirection: 'reverse', animationDuration: '30s' }} />
 
               {/* Glow behind */}
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-accent/20 to-accent-2/20 blur-2xl scale-110" />
+              <div className="absolute inset-0 rounded-full bg-accent/10 blur-2xl scale-110" />
 
               {/* Avatar */}
               <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-border-light shadow-2xl">
@@ -188,7 +188,7 @@ export default function Hero() {
               >
                 <p className="text-xs text-text-muted">Based in</p>
                 <p className="font-heading font-bold text-sm text-text">
-                  🇳🇬 Nigeria
+                   Nigeria
                 </p>
               </motion.div>
             </div>

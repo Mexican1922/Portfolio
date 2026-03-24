@@ -1,26 +1,54 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Mail, Phone, Send, MapPin, Clock, ArrowUpRight } from 'lucide-react'
+import { Mail, Phone, Send, MapPin, Clock, ArrowUpRight, Loader2, CheckCircle2, XCircle } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
 import { socialLinks } from '../data/projects'
 
 export default function Contact() {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' })
+  const [status, setStatus] = useState('idle') // 'idle', 'submitting', 'success', 'error'
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
-    const subject = encodeURIComponent(`Portfolio Contact from ${formData.name}`)
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\n${formData.message}`
-    )
-    window.location.href = `mailto:${socialLinks.email}?subject=${subject}&body=${body}`
+    setStatus('submitting')
+
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify({
+          access_key: 'a72c293c-57b5-4399-9a65-84e4adfcf643',
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          subject: `New Portfolio Message from ${formData.name}`,
+          from_name: 'Valentine Portfolio'
+        })
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setFormData({ name: '', email: '', message: '' })
+        setTimeout(() => setStatus('idle'), 5000)
+      } else {
+        setStatus('error')
+        setTimeout(() => setStatus('idle'), 5000)
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setStatus('error')
+      setTimeout(() => setStatus('idle'), 5000)
+    }
   }
 
   return (
     <section className="relative">
       {/* Hero area */}
-      <div className="pt-32 pb-20 lg:pt-40 lg:pb-28 gradient-mesh">
-        <div className="absolute inset-0 dot-grid opacity-20" />
+      <div className="relative pt-32 pb-20 lg:pt-40 lg:pb-28">
+        <div className="absolute inset-0 dot-grid opacity-20 pointer-events-none" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -32,7 +60,7 @@ export default function Contact() {
             </p>
             <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-6xl tracking-tight mb-4">
               Get In
-              <span className="gradient-text"> Touch</span>
+              <span className="text-text"> Touch</span>
               <span className="inline-block w-3 h-3 rounded-full bg-accent ml-2 align-middle" />
             </h1>
             <p className="text-text-muted text-lg max-w-xl leading-relaxed">
@@ -65,7 +93,7 @@ export default function Contact() {
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      className="w-full px-5 py-3.5 rounded-xl bg-surface-2 border border-border text-text placeholder-text-dim text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
+                      className="w-full px-5 py-4 rounded-xl bg-surface-2 hover:bg-surface-3/50 focus:bg-surface-3 border border-border hover:border-border-light text-text placeholder-text-muted text-sm focus:outline-none focus:border-accent focus:ring-4 focus:ring-accent/20 transition-all shadow-sm"
                       placeholder="Valentine Azolibe"
                     />
                   </div>
@@ -84,7 +112,7 @@ export default function Contact() {
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      className="w-full px-5 py-3.5 rounded-xl bg-surface-2 border border-border text-text placeholder-text-dim text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all"
+                      className="w-full px-5 py-4 rounded-xl bg-surface-2 hover:bg-surface-3/50 focus:bg-surface-3 border border-border hover:border-border-light text-text placeholder-text-muted text-sm focus:outline-none focus:border-accent focus:ring-4 focus:ring-accent/20 transition-all shadow-sm"
                       placeholder="you@email.com"
                     />
                   </div>
@@ -105,21 +133,45 @@ export default function Contact() {
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
-                    className="w-full px-5 py-3.5 rounded-xl bg-surface-2 border border-border text-text placeholder-text-dim text-sm focus:outline-none focus:border-accent/50 focus:ring-1 focus:ring-accent/20 transition-all resize-none"
+                    className="w-full px-5 py-4 rounded-xl bg-surface-2 hover:bg-surface-3/50 focus:bg-surface-3 border border-border hover:border-border-light text-text placeholder-text-muted text-sm focus:outline-none focus:border-accent focus:ring-4 focus:ring-accent/20 transition-all shadow-sm resize-none"
                     placeholder="Tell me about your project..."
                   />
                 </div>
 
                 <button
                   type="submit"
-                  className="group inline-flex items-center gap-2 px-8 py-4 rounded-full bg-accent text-white font-semibold text-sm hover:bg-accent-light transition-all hover:shadow-lg hover:shadow-accent/25"
+                  disabled={status === 'submitting'}
+                  className={`group inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-sm transition-all shadow-lg ${
+                    status === 'success' ? 'bg-success text-white' :
+                    status === 'error' ? 'bg-red-500 text-white' :
+                    'bg-accent text-white hover:bg-accent-light hover:shadow-accent/25'
+                  } ${status === 'submitting' ? 'opacity-80 cursor-wait' : ''}`}
                 >
-                  <Send size={16} />
-                  Send Message
-                  <ArrowUpRight
-                    size={14}
-                    className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                  />
+                  {status === 'submitting' ? (
+                    <>
+                      <Loader2 size={16} className="animate-spin" />
+                      Sending...
+                    </>
+                  ) : status === 'success' ? (
+                    <>
+                      <CheckCircle2 size={16} />
+                      Message Sent!
+                    </>
+                  ) : status === 'error' ? (
+                    <>
+                      <XCircle size={16} />
+                      Failed to Send
+                    </>
+                  ) : (
+                    <>
+                      <Send size={16} />
+                      Send Message
+                      <ArrowUpRight
+                        size={14}
+                        className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                      />
+                    </>
+                  )}
                 </button>
               </form>
             </ScrollReveal>
@@ -176,7 +228,7 @@ export default function Contact() {
                       <p className="text-xs text-text-dim uppercase tracking-wider mb-1">
                         Location
                       </p>
-                      <p className="text-sm text-text">Nigeria 🇳🇬</p>
+                      <p className="text-sm text-text">Nigeria </p>
                     </div>
                   </div>
 
