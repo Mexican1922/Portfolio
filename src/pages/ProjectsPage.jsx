@@ -1,14 +1,15 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowUpRight, ExternalLink, Star } from 'lucide-react'
+import { ArrowUpRight, ExternalLink, Star, Rocket } from 'lucide-react'
 import ScrollReveal from '../components/ScrollReveal'
 import { featuredProjects, otherProjects } from '../data/projects'
 
 const allProjects = [...featuredProjects, ...otherProjects]
-const filters = ['All', 'Client Work', 'Firebase', 'React', 'Vue.js', 'Full-Stack', 'Frontend']
+const filters = ['All', 'Co-Founder', 'Client Work', 'Firebase', 'React', 'Vue.js', 'Full-Stack', 'Frontend']
 
 // Map filter name → matching badge values
 const badgeMap = {
+  'Co-Founder': ['founder'],
   'Client Work': ['client'],
   'Firebase': ['firebase'],
   'React': ['react'],
@@ -20,9 +21,7 @@ const badgeMap = {
 function getFiltered(projects, filter) {
   if (filter === 'All') return projects
   return projects.filter((p) => {
-    // Check exact tag match
     const tagMatch = p.tags?.some((t) => t === filter)
-    // Check badge match
     const badges = badgeMap[filter] || []
     const badgeMatch = badges.includes(p.badge)
     return tagMatch || badgeMatch
@@ -42,6 +41,19 @@ const cardVariants = {
     },
   }),
   exit: { opacity: 0, scale: 0.95, transition: { duration: 0.2 } },
+}
+
+function getBadgeLabel(badge) {
+  switch (badge) {
+    case 'founder': return 'Co-Founder'
+    case 'react': return 'React'
+    case 'vue': return 'Vue.js'
+    case 'fullstack': return 'Full-Stack'
+    case 'frontend': return 'Frontend'
+    case 'firebase': return 'Firebase'
+    case 'client': return 'Client Work'
+    default: return badge
+  }
 }
 
 export default function ProjectsPage() {
@@ -100,7 +112,7 @@ export default function ProjectsPage() {
           ))}
         </div>
 
-        {/* Projects Grid — keyed by filter to force re-mount + animate */}
+        {/* Projects Grid */}
         <motion.div
           key={activeFilter}
           className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6"
@@ -140,21 +152,22 @@ export default function ProjectsPage() {
                             Client
                           </span>
                         )}
-                        <span
-                          className={`badge-${project.badge} text-[10px] font-medium px-2.5 py-0.5 rounded-full`}
-                        >
-                          {project.badge === 'react'
-                            ? 'React'
-                            : project.badge === 'vue'
-                              ? 'Vue.js'
-                              : project.badge === 'fullstack'
-                                ? 'Full-Stack'
-                                : project.badge === 'frontend'
-                                  ? 'Frontend'
-                                  : project.badge === 'firebase'
-                                    ? ' Firebase'
-                                    : 'Client Work'}
-                        </span>
+                        {project.badge === 'founder' && (
+                          <span
+                            className="flex items-center gap-1 text-[10px] font-semibold px-2.5 py-0.5 rounded-full text-white"
+                            style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+                          >
+                            <Rocket size={8} />
+                            Co-Founder
+                          </span>
+                        )}
+                        {project.badge !== 'founder' && (
+                          <span
+                            className={`badge-${project.badge} text-[10px] font-medium px-2.5 py-0.5 rounded-full`}
+                          >
+                            {getBadgeLabel(project.badge)}
+                          </span>
+                        )}
                       </div>
                     </div>
 

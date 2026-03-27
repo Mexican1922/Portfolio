@@ -1,5 +1,28 @@
 export const featuredProjects = [
   {
+    id: "metermate",
+    title: "MeterMate",
+    description:
+      "A complete energy dashboard application allowing users to effortlessly set up their house and seamlessly join households. Features a sleek, modern, dark-themed UI, robust authentication, and real-time database management tailored for premium user experiences.",
+    image: "/images/metermate.png",
+    url: "https://naija-metermate.vercel.app",
+    tags: ["React", "Next.js", "Full-Stack", "Supabase"],
+    badge: "fullstack",
+  },
+  {
+    id: "collan",
+    title: "Collan",
+    subtitle: "Co-Founded — Developer Networking & Collaboration Platform",
+    description:
+      "Co-founded and built Collan, a full-featured platform where developers and founders connect, collaborate, and showcase projects worldwide. Features include a community feed, project marketplace, collaborations, live sessions, creator tools, and real-time chat. Grown to 2,400+ active techies.",
+    image: "/images/collan.png",
+    url: "https://collan.dev",
+    tags: ["Co-Founder", "Full-Stack", "SaaS", "Community"],
+    badge: "founder",
+    highlight: "Build The Future Together — 2,400+ Active Techies",
+    stats: { members: "2,400+", linkedin: "478+", whatsapp: "500+" },
+  },
+  {
     id: "kings-tech",
     title: "Kings Tech Solutions",
     subtitle: "Client Project — Full-Stack Web Application",
@@ -7,7 +30,7 @@ export const featuredProjects = [
       "A professional business website for a smart energy & security company offering solar installations, CCTV systems, house wiring, and fencing across Nigeria. Built with React, featuring dynamic routing, SEO optimization, and a modern dark UI.",
     image: "/images/kings-tech.png",
     url: "https://kingstechsolutions.org",
-    tags: ["React", "Tailwind CSS", "Full-Stack", "Client Work"],
+    tags: ["React", "Tailwind CSS", "Frontend", "Client Work"],
     badge: "client",
     highlight: "Smart Energy & Security Solutions for Homes and Businesses",
     stats: { states: "12+", year: "2023", customers: "50+" },
@@ -20,7 +43,7 @@ export const featuredProjects = [
       "A full-featured tech education academy where users can browse courses, enroll, and pay for programs. Features integrated payment systems, course management, user authentication, and a polished editorial design.",
     image: "/images/apex-techhub.png",
     url: "https://apex-techhub.com",
-    tags: ["React", "Payment Integration", "Full-Stack", "EdTech"],
+    tags: ["React", "Payment Integration", "Frontend", "EdTech"],
     badge: "client",
     highlight: "Invest in Tech Skills your Future Self will be Proud of",
     stats: null,
@@ -28,16 +51,6 @@ export const featuredProjects = [
 ];
 
 export const otherProjects = [
-  {
-    id: "metermate",
-    title: "MeterMate",
-    description:
-      "A complete energy dashboard application allowing users to effortlessly set up their house and seamlessly join households. Features a sleek, modern, dark-themed UI, robust authentication, and real-time database management tailored for premium user experiences.",
-    image: "/images/metermate.jpeg",
-    url: "https://naija-metermate.vercel.app",
-    tags: ["React", "Next.js", "Full-Stack", "Supabase"],
-    badge: "fullstack",
-  },
   {
     id: "stockflow",
     title: "StockFlow",
@@ -70,23 +83,13 @@ export const otherProjects = [
   },
   {
     id: "ticket-vue",
-    title: "Ticket Management",
+    title: "Ticket Management — Vue",
     description:
       "Vue.js implementation demonstrating framework versatility with reactive components and efficient state management.",
     image: "/images/ticket-vue.png",
     url: "https://ticket-app-vue.onrender.com",
     tags: ["Vue.js", "Full-Stack"],
     badge: "vue",
-  },
-  {
-    id: "audiophile",
-    title: "Audiophile E-commerce",
-    description:
-      "Premium audio equipment e-commerce platform with product browsing, shopping cart, checkout flow, and responsive design.",
-    image: "/images/audiophile.png",
-    url: "https://audiophile-tvvc.onrender.com",
-    tags: ["React", "E-commerce"],
-    badge: "react",
   },
   {
     id: "animeloop",
@@ -98,68 +101,10 @@ export const otherProjects = [
     tags: ["React", "API Integration"],
     badge: "fullstack",
   },
-  {
-    id: "soldierweb",
-    title: "SoldierWeb",
-    description:
-      "Military-themed web application featuring robust backend architecture, user authentication, and content management system.",
-    image: "/images/soldierweb.png",
-    url: "https://soldierweb.onrender.com",
-    tags: ["Full-Stack", "Auth"],
-    badge: "fullstack",
-  },
-  {
-    id: "weight-loss",
-    title: "Weight Loss Platform",
-    description:
-      "Health and fitness platform for tracking weight loss goals with interactive charts, progress monitoring, and motivational features.",
-    image: "/images/weight.png",
-    url: "https://weight-loss-rose.vercel.app",
-    tags: ["React", "Frontend"],
-    badge: "frontend",
-  },
-  {
-    id: "space",
-    title: "Space Exploration",
-    description:
-      "Interactive space exploration website with stunning visuals, smooth animations, and educational content about the cosmos.",
-    image: "/images/space.png",
-    url: "https://space-rho-pearl.vercel.app",
-    tags: ["Frontend", "Animations"],
-    badge: "frontend",
-  },
-  {
-    id: "autohub",
-    title: "Auto Hub",
-    description:
-      "Auto parts e-commerce store featuring clean design, intuitive product browsing, filtering system, and responsive layout.",
-    image: "/images/autohub.png",
-    url: "https://auto-hub-gamma.vercel.app",
-    tags: ["React", "E-commerce"],
-    badge: "frontend",
-  },
-  {
-    id: "villa-agency",
-    title: "Villa Agency",
-    description:
-      "Real estate website showcasing luxury properties with modern UI, property listings, detailed views, and contact forms.",
-    image: "/images/villa.png",
-    url: "https://villaagency-seven.vercel.app/",
-    tags: ["Frontend", "UI/UX"],
-    badge: "frontend",
-  },
 ];
 
 export const skills = {
-  "Full-Stack Development": [
-    "React.js",
-    "Vue.js",
-    "Next.js",
-    "Node.js",
-    "Express.js",
-    "Python",
-    "REST APIs",
-  ],
+  "Full-Stack Development": ["React.js", "Vue.js", "Next.js", "REST APIs"],
   "Frontend & Design": [
     "JavaScript (ES6+)",
     "TypeScript",
@@ -167,14 +112,13 @@ export const skills = {
     "CSS3 & HTML5",
     "Responsive Design",
     "UI/UX Design",
-    "Figma",
   ],
   "Tools & Platforms": [
     "Git & GitHub",
     "Vercel",
     "Render",
     "Firebase",
-    "MongoDB",
+    "Supabase",
     "Payment Systems",
     "SEO Optimization",
   ],
@@ -195,5 +139,5 @@ export const socialLinks = {
   email: "valentinechibuzor480@gmail.com",
   phone: "+2347049495832",
   resume:
-    "https://drive.google.com/file/d/14lD9mBiDsS4UGcHWIrBFS8aCIi0FZb_v/view?usp=drivesdk",
+    "https://drive.google.com/file/d/1Ji-izY8MM61zjFUiqJVvO3HHHNh_cQK6/view?usp=drivesdk",
 };

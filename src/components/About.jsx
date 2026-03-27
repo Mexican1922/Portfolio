@@ -7,8 +7,8 @@ import { skills, socialLinks } from '../data/projects'
 const highlights = [
   {
     icon: Code2,
-    title: 'Full-Stack Development',
-    desc: 'Building complete web applications from frontend to backend with React, Node.js, and modern frameworks.',
+    title: 'Frontend Development',
+    desc: 'Building polished, production-ready web applications using React, Next.js, Vue.js, and TypeScript with a focus on performance and clean code.',
   },
   {
     icon: Palette,
@@ -59,8 +59,16 @@ export default function About() {
             <ScrollReveal>
               <p className="text-text-muted text-lg leading-relaxed">
                 Hi, I'm <span className="text-text font-semibold">Valentine Azolibe</span>, a
-                full-stack developer passionate about building clean, modern, and
-                user-friendly web applications.
+                Frontend Developer and Co-Founder of{' '}
+                <a
+                  href="https://collan.dev"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-accent-light font-medium border-b border-accent/30 hover:border-accent transition-colors"
+                >
+                  Collan
+                </a>
+                , a developer networking platform with 2,400+ active techies worldwide.
               </p>
             </ScrollReveal>
 
@@ -68,20 +76,21 @@ export default function About() {
               <p className="text-text-muted text-lg leading-relaxed">
                 My journey into web development began in university, where I first
                 discovered frontend through a friend. Later, at{' '}
-                <span className="text-text font-medium">Aptech</span>, I sharpened
-                my skills in web development with Python, and since then, I've
-                been deeply committed to creating digital experiences that are both
-                functional and beautiful.
+                <span className="text-text font-medium">Aptech</span>, I deepened
+                my skills and built a strong foundation in modern web development.
+                Since then, I've been deeply committed to creating digital
+                experiences that are both functional and beautiful.
               </p>
             </ScrollReveal>
 
             <ScrollReveal delay={0.2}>
               <p className="text-text-muted text-lg leading-relaxed">
                 I specialize in building responsive web applications using{' '}
-                <span className="text-accent-light font-medium">React</span> and{' '}
+                <span className="text-accent-light font-medium">React</span>,{' '}
+                <span className="text-accent-light font-medium">Next.js</span>, and{' '}
                 <span className="text-accent-light font-medium">Vue.js</span>,
-                with a strong foundation in modern JavaScript, Tailwind CSS, and
-                Node.js. I've worked on diverse projects from{' '}
+                with a strong foundation in TypeScript, Tailwind CSS, Firebase, and Supabase.
+                I've worked on diverse projects from{' '}
                 <span className="text-text font-medium">
                   EdTech platforms with payment integration
                 </span>{' '}

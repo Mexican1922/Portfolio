@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles } from 'lucide-react'
+import { ArrowRight, Sparkles, Rocket } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
 function useCountUp(target, duration = 1800) {
@@ -17,7 +17,6 @@ function useCountUp(target, duration = 1800) {
           const animate = (now) => {
             const elapsed = now - start
             const progress = Math.min(elapsed / duration, 1)
-            // Ease out cubic
             const eased = 1 - Math.pow(1 - progress, 3)
             setCount(Math.floor(eased * target))
             if (progress < 1) requestAnimationFrame(animate)
@@ -37,7 +36,7 @@ function useCountUp(target, duration = 1800) {
 export default function Hero() {
   const stat1 = useCountUp(12)
   const stat2 = useCountUp(2)
-  const stat3 = useCountUp(3)
+  const stat3 = useCountUp(2400)
 
   return (
     <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
@@ -59,12 +58,22 @@ export default function Hero() {
               initial={{ opacity: 0, y: 30 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.7, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="flex items-center gap-2 mb-6"
+              className="flex flex-wrap items-center gap-2 mb-6"
             >
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent-light text-sm font-medium">
                 <Sparkles size={14} />
                 Available for work
               </span>
+              <a
+                href="https://collan.dev"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium text-white transition-all hover:opacity-90"
+                style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
+              >
+                <Rocket size={14} />
+                Co-Founder @ Collan 2,400+ Techies
+              </a>
             </motion.div>
 
             <motion.p
@@ -73,7 +82,7 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.3, ease: [0.16, 1, 0.3, 1] }}
               className="text-text-muted text-lg mb-3"
             >
-              Hey, I&apos;m Valentine 
+              Hey, I&apos;m Valentine
             </motion.p>
 
             <motion.h1
@@ -82,7 +91,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight mb-6"
             >
-              <span className="text-text">Full-Stack</span>
+              <span className="text-text">Frontend</span>
               <br />
               Developer
             </motion.h1>
@@ -94,7 +103,7 @@ export default function Hero() {
               className="text-text-muted text-lg leading-relaxed max-w-lg mb-8"
             >
               I build polished, high-performance web applications that users love.
-              From stunning frontends to robust payment integrations — I ship
+              From stunning frontends to robust payment integrations. I ship
               real products for real clients.
             </motion.p>
 
@@ -150,7 +159,7 @@ export default function Hero() {
                   {stat3.count}+
                 </p>
                 <p className="text-text-dim text-xs mt-1 uppercase tracking-wider">
-                  Years Learning
+                  Collan Techies
                 </p>
               </div>
             </motion.div>
@@ -164,7 +173,7 @@ export default function Hero() {
             className="order-1 lg:order-2 flex justify-center"
           >
             <div className="relative">
-              {/* Rotating ring — hidden on mobile to prevent overflow */}
+              {/* Rotating ring */}
               <div className="absolute -inset-6 rounded-full border border-dashed border-accent/20 animate-spin-slow hidden sm:block" />
               <div className="absolute -inset-12 rounded-full border border-dashed border-accent-2/10 animate-spin-slow hidden sm:block" style={{ animationDirection: 'reverse', animationDuration: '30s' }} />
 
@@ -188,7 +197,7 @@ export default function Hero() {
               >
                 <p className="text-xs text-text-muted">Based in</p>
                 <p className="font-heading font-bold text-sm text-text">
-                   Nigeria
+                  Nigeria
                 </p>
               </motion.div>
             </div>
