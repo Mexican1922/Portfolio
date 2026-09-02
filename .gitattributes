@@ -6,6 +6,7 @@
 # leaving the file structurally invalid. Pin these types as binary.
 *.pdf   binary
 *.png   binary
+*.webp  binary
 *.jpg   binary
 *.jpeg  binary
 *.gif   binary

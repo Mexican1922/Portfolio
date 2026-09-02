@@ -193,7 +193,7 @@ export default function Hero() {
               {/* Avatar */}
               <div className="relative w-52 h-52 sm:w-64 sm:h-64 md:w-80 md:h-80 rounded-full overflow-hidden border-2 border-border-light shadow-2xl">
                 <img
-                  src="/images/profile.jpeg"
+                  src="/images/profile.webp"
                   alt="Valentine Azolibe"
                   className="w-full h-full object-cover"
                 />
