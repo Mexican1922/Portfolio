@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Star, ExternalLink } from 'lucide-react'
+import { ArrowUpRight, Star, ExternalLink, Github } from 'lucide-react'
 import ScrollReveal from './ScrollReveal'
 import { featuredProjects } from '../data/projects'
 
@@ -35,12 +35,7 @@ export default function FeaturedProjects() {
         <div className="space-y-8">
           {featuredProjects.map((project, index) => (
             <ScrollReveal key={project.id} delay={index * 0.15}>
-              <a
-                href={project.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group block"
-              >
+              <div className="group block">
                 <div className="glass-card rounded-2xl lg:rounded-3xl overflow-hidden project-card-hover glow-border">
                   <div className="grid lg:grid-cols-2 gap-0">
                     {/* Image */}
@@ -92,18 +87,36 @@ export default function FeaturedProjects() {
                       </div>
 
                       {/* CTA */}
-                      <div className="flex items-center gap-2 text-accent-light text-sm font-semibold group-hover:gap-3 transition-all">
-                        <ExternalLink size={16} />
-                        Visit Live Site
-                        <ArrowUpRight
-                          size={16}
-                          className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
-                        />
+                      <div className="flex flex-wrap items-center gap-x-5 gap-y-3">
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 text-accent-light text-sm font-semibold hover:gap-3 transition-all"
+                        >
+                          <ExternalLink size={16} />
+                          Visit Live Site
+                          <ArrowUpRight
+                            size={16}
+                            className="group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform"
+                          />
+                        </a>
+                        {project.repo && (
+                          <a
+                            href={project.repo}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 text-text-muted text-sm font-semibold hover:text-text transition-colors"
+                          >
+                            <Github size={16} />
+                            View Code
+                          </a>
+                        )}
                       </div>
                     </div>
                   </div>
                 </div>
-              </a>
+              </div>
             </ScrollReveal>
           ))}
         </div>

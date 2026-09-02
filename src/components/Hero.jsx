@@ -4,14 +4,24 @@ import { ArrowRight, Sparkles, Rocket } from 'lucide-react'
 import { useState, useEffect, useRef } from 'react'
 
 function useCountUp(target, duration = 1800) {
-  const [count, setCount] = useState(0)
+  // Start at the real value so the stat is never rendered as "0+" before the
+  // reveal fires (hero stats can sit below the fold on short viewports, and
+  // reduced-motion users never animate at all).
+  const prefersReducedMotion =
+    typeof window !== 'undefined' &&
+    window.matchMedia?.('(prefers-reduced-motion: reduce)').matches
+
+  const [count, setCount] = useState(target)
   const ref = useRef(null)
   const hasRun = useRef(false)
 
   useEffect(() => {
+    if (prefersReducedMotion) return
+    // Only drop to 0 once we know we can animate up from it.
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting && !hasRun.current) {
+          setCount(0)
           hasRun.current = true
           const start = performance.now()
           const animate = (now) => {
@@ -28,7 +38,7 @@ function useCountUp(target, duration = 1800) {
     )
     if (ref.current) observer.observe(ref.current)
     return () => observer.disconnect()
-  }, [target, duration])
+  }, [target, duration, prefersReducedMotion])
 
   return { count, ref }
 }

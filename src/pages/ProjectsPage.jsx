@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowUpRight, ExternalLink, Star, Rocket } from 'lucide-react'
+import { ArrowUpRight, ExternalLink, Star, Rocket, Github } from 'lucide-react'
 import ScrollReveal from '../components/ScrollReveal'
 import { featuredProjects, otherProjects } from '../data/projects'
 
@@ -130,12 +130,7 @@ export default function ProjectsPage() {
                 exit="exit"
                 layout
               >
-                <a
-                  href={project.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="group block h-full"
-                >
+                <div className="group block h-full">
                   <div className="glass-card rounded-2xl overflow-hidden h-full project-card-hover glow-border flex flex-col">
                     {/* Image */}
                     <div className="project-image-wrapper aspect-video relative">
@@ -173,12 +168,19 @@ export default function ProjectsPage() {
 
                     {/* Content */}
                     <div className="p-6 flex flex-col flex-1">
-                      <h3 className="font-heading font-bold text-lg text-text mb-2 group-hover:text-accent-light transition-colors flex items-center gap-2">
-                        {project.title}
-                        <ExternalLink
-                          size={14}
-                          className="text-text-dim group-hover:text-accent-light transition-colors"
-                        />
+                      <h3 className="font-heading font-bold text-lg text-text mb-2 flex items-center gap-2">
+                        <a
+                          href={project.url}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2 hover:text-accent-light transition-colors"
+                        >
+                          {project.title}
+                          <ExternalLink
+                            size={14}
+                            className="text-text-dim group-hover:text-accent-light transition-colors"
+                          />
+                        </a>
                       </h3>
 
                       <p className="text-text-muted text-sm leading-relaxed mb-4 flex-1">
@@ -199,9 +201,21 @@ export default function ProjectsPage() {
                           </span>
                         ))}
                       </div>
+
+                      {project.repo && (
+                        <a
+                          href={project.repo}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-text-dim hover:text-text transition-colors"
+                        >
+                          <Github size={14} />
+                          View Code
+                        </a>
+                      )}
                     </div>
                   </div>
-                </a>
+                </div>
               </motion.div>
             ))}
           </AnimatePresence>
