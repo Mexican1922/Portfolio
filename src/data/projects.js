@@ -50,9 +50,52 @@ export const featuredProjects = [
     highlight: "Invest in Tech Skills your Future Self will be Proud of",
     stats: null,
   },
+  {
+    id: "fredan-textiles",
+    title: "Fredan Textiles",
+    subtitle: "Client Project — Full-Stack Commerce Platform",
+    description:
+      "Premium textile catalog and bespoke fashion design platform for a textile business moving from in-person sales to a digital storefront. A React storefront powered by a Django REST backend, handling a browsable fabric catalog, bespoke design requests, and order management. Live on its own domain.",
+    image: "/images/fredan.png",
+    url: "https://fredantextiles.com",
+    tags: ["React", "Django", "Full-Stack", "Client Work"],
+    badge: "client",
+    highlight: "Fabric Catalog & Bespoke Tailoring, End to End",
+  },
 ];
 
 export const otherProjects = [
+  {
+    id: "uda-music",
+    title: "UDA — Music Streaming",
+    description:
+      "A music streaming service with playlists, artist pages, search, listening history, and a recommendation engine. React and TypeScript on the front, Django REST on the back.",
+    image: "/images/uda-home.png",
+    url: "https://uda-obi.vercel.app",
+    tags: ["React", "Django", "Full-Stack"],
+    badge: "fullstack",
+  },
+  {
+    id: "padipay",
+    title: "PadiPay",
+    description:
+      "A digital wallet PWA: send money, buy airtime and data, pay bills, and track every transaction. Installs like a native app.",
+    image: "/images/padi-more-options.png",
+    url: "https://naija-padipay.vercel.app",
+    tags: ["React", "Fintech", "PWA"],
+    badge: "frontend",
+  },
+  {
+    id: "crestforge",
+    title: "Crestforge Construction",
+    subtitle: "Client Project",
+    description:
+      "Site for a construction company, built on Squarespace. Hired on a Friday with no prior Squarespace experience, delivered the finished site that Sunday.",
+    image: "/images/Crest.png",
+    url: "https://crestforgeconstruction.org",
+    tags: ["Client Work", "Squarespace"],
+    badge: "client",
+  },
   {
     id: "stockflow",
     title: "StockFlow",
@@ -152,7 +195,7 @@ export const socialLinks = {
   instagram: "https://instagram.com/iamazolibe",
   linkedin: "https://www.linkedin.com/in/chibuzor-azolibe-45578b323",
   github: "https://github.com/Mexican1922",
-  email: "valentinechibuzor480@gmail.com",
+  email: "valentine@collan.dev",
   phone: "+2347049495832",
   resume: "/Valentine-Azolibe-CV.pdf",
 };

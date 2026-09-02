@@ -5,7 +5,7 @@ import ScrollReveal from '../components/ScrollReveal'
 import { featuredProjects, otherProjects } from '../data/projects'
 
 const allProjects = [...featuredProjects, ...otherProjects]
-const filters = ['All', 'Co-Founder', 'Client Work', 'Firebase', 'React', 'Vue.js', 'Full-Stack', 'Frontend']
+const filters = ['All', 'Co-Founder', 'Client Work', 'React', 'Django', 'Vue.js', 'Full-Stack', 'Frontend', 'Firebase']
 
 // Map filter name → matching badge values
 const badgeMap = {
