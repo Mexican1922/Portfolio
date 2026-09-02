@@ -148,8 +148,8 @@ export const otherProjects = [
     image: "/images/animeloop.png",
     url: "https://animeloop-5hiw.onrender.com",
     repo: "https://github.com/Mexican1922/AnimeLoop",
-    tags: ["React", "API Integration"],
-    badge: "fullstack",
+    tags: ["HTML", "CSS", "JavaScript", "API Integration"],
+    badge: "frontend",
   },
 ];
 

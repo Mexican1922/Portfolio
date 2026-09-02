@@ -225,6 +225,29 @@ body {
 }
 
 /* ──────────────────────────────────────────
+   Route Loading Spinner
+   ────────────────────────────────────────── */
+.page-spinner {
+  width: 2rem;
+  height: 2rem;
+  border-radius: 9999px;
+  /* Track stays dim; one lit arc gives the ring its direction. */
+  border: 2px solid var(--theme-border-light);
+  border-top-color: var(--theme-accent);
+  animation: spin-slow 0.7s linear infinite;
+  transition: opacity 0.2s ease;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .page-spinner {
+    animation: none;
+    /* Without motion, a full ring in the accent still reads as "working". */
+    border-color: var(--theme-accent);
+    opacity: 0.6;
+  }
+}
+
+/* ──────────────────────────────────────────
    Glass Card
    ────────────────────────────────────────── */
 .glass-card {

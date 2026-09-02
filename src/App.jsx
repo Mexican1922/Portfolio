@@ -1,12 +1,18 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
+import { Suspense, lazy } from 'react'
 import { AnimatePresence, motion } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
+import PageLoader from './components/PageLoader'
 import HomePage from './pages/HomePage'
-import ProjectsPage from './pages/ProjectsPage'
-import AboutPage from './pages/AboutPage'
-import ContactPage from './pages/ContactPage'
+
+// The landing page stays in the main bundle — it is what most visitors arrive
+// on, and splitting it would put a loading state in front of the first paint.
+// The rest are split out, so they cost nothing until someone navigates.
+const ProjectsPage = lazy(() => import('./pages/ProjectsPage'))
+const AboutPage = lazy(() => import('./pages/AboutPage'))
+const ContactPage = lazy(() => import('./pages/ContactPage'))
 
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
@@ -61,40 +67,44 @@ export default function App() {
       <Navbar />
       <main className="flex-1">
         <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route
-              path="/"
-              element={
-                <PageWrapper>
-                  <HomePage />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/projects"
-              element={
-                <PageWrapper>
-                  <ProjectsPage />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/about"
-              element={
-                <PageWrapper>
-                  <AboutPage />
-                </PageWrapper>
-              }
-            />
-            <Route
-              path="/contact"
-              element={
-                <PageWrapper>
-                  <ContactPage />
-                </PageWrapper>
-              }
-            />
-          </Routes>
+          {/* Keyed on the path so each navigation gets its own boundary and the
+              spinner re-arms, rather than resolving once for the whole app. */}
+          <Suspense key={location.pathname} fallback={<PageLoader />}>
+            <Routes location={location} key={location.pathname}>
+              <Route
+                path="/"
+                element={
+                  <PageWrapper>
+                    <HomePage />
+                  </PageWrapper>
+                }
+              />
+              <Route
+                path="/projects"
+                element={
+                  <PageWrapper>
+                    <ProjectsPage />
+                  </PageWrapper>
+                }
+              />
+              <Route
+                path="/about"
+                element={
+                  <PageWrapper>
+                    <AboutPage />
+                  </PageWrapper>
+                }
+              />
+              <Route
+                path="/contact"
+                element={
+                  <PageWrapper>
+                    <ContactPage />
+                  </PageWrapper>
+                }
+              />
+            </Routes>
+          </Suspense>
         </AnimatePresence>
       </main>
       <Footer />
