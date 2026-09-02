@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ArrowUpRight, ExternalLink, Star, Rocket, Github } from 'lucide-react'
+import { ArrowUpRight, ExternalLink, Github } from 'lucide-react'
+import MaterialIcon from '../components/MaterialIcon'
 import ScrollReveal from '../components/ScrollReveal'
 import { featuredProjects, otherProjects } from '../data/projects'
 
@@ -145,7 +146,7 @@ export default function ProjectsPage() {
                       <div className="absolute top-3 left-3 flex gap-2">
                         {project.badge === 'client' && (
                           <span className="badge-featured flex items-center gap-1 text-[10px]">
-                            <Star size={8} />
+                            <MaterialIcon name="star" size={9} />
                             Client
                           </span>
                         )}
@@ -154,7 +155,7 @@ export default function ProjectsPage() {
                             className="flex items-center gap-1 text-[10px] font-semibold px-2.5 py-0.5 rounded-full text-white"
                             style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
                           >
-                            <Rocket size={8} />
+                            <MaterialIcon name="groups" size={9} />
                             Co-Founder
                           </span>
                         )}

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowRight, Sparkles, Rocket } from 'lucide-react'
+import { ArrowRight } from 'lucide-react'
+import MaterialIcon from './MaterialIcon'
 import { useState, useEffect, useRef } from 'react'
 
 function useCountUp(target, duration = 1800) {
@@ -71,7 +72,7 @@ export default function Hero() {
               className="flex flex-wrap items-center gap-2 mb-6"
             >
               <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-accent/10 border border-accent/20 text-accent-light text-sm font-medium">
-                <Sparkles size={14} />
+                <MaterialIcon name="work" size={14} />
                 Available for work
               </span>
               <a
@@ -81,7 +82,7 @@ export default function Hero() {
                 className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-sm font-medium text-white transition-all hover:opacity-90"
                 style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
               >
-                <Rocket size={14} />
+                <MaterialIcon name="groups" size={14} />
                 Co-Founder @ Collan 2,000+ Techies
               </a>
             </motion.div>

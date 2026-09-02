@@ -191,7 +191,7 @@ export const skills = {
 export const socialLinks = {
   x: "https://x.com/Vibe_with_val",
   instagram: "https://instagram.com/iamazolibe",
-  linkedin: "https://www.linkedin.com/in/chibuzor-azolibe-45578b323",
+  linkedin: "https://www.linkedin.com/in/valentine-azolibe-45578b323",
   github: "https://github.com/Mexican1922",
   email: "valentine@collan.dev",
   phone: "+2347049495832",

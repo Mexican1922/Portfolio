@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
-import { ArrowUpRight, Star, ExternalLink, Github } from 'lucide-react'
+import { ArrowUpRight, ExternalLink, Github } from 'lucide-react'
+import MaterialIcon from './MaterialIcon'
 import ScrollReveal from './ScrollReveal'
 import { featuredProjects } from '../data/projects'
 
@@ -58,7 +59,7 @@ export default function FeaturedProjects() {
                     <div className="p-6 sm:p-8 lg:p-12 flex flex-col justify-center">
                       <div className="flex items-center gap-3 mb-5">
                         <span className="badge-featured flex items-center gap-1">
-                          <Star size={10} />
+                          <MaterialIcon name="star" size={11} />
                           Featured
                         </span>
                         <span className={`badge-${project.badge} text-xs font-medium px-3 py-1 rounded-full`}>
