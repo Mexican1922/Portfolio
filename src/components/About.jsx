@@ -7,8 +7,8 @@ import { skills, socialLinks } from '../data/projects'
 const highlights = [
   {
     icon: Code2,
-    title: 'Frontend Development',
-    desc: 'Building polished, production-ready web applications using React, Next.js, Vue.js, and TypeScript with a focus on performance and clean code.',
+    title: 'Full-Stack Development',
+    desc: 'Building production web applications end to end: React, Next.js and TypeScript on the frontend, Python and Django REST on the backend.',
   },
   {
     icon: Palette,
@@ -17,8 +17,8 @@ const highlights = [
   },
   {
     icon: Server,
-    title: 'Payment Integration',
-    desc: 'Implementing secure payment systems and e-commerce functionality for real-world client applications.',
+    title: 'APIs & Data',
+    desc: 'Designing REST APIs with Django REST Framework and PostgreSQL, including auth, permissions and secure payment integration.',
   },
   {
     icon: Users,
@@ -59,7 +59,7 @@ export default function About() {
             <ScrollReveal>
               <p className="text-text-muted text-lg leading-relaxed">
                 Hi, I'm <span className="text-text font-semibold">Valentine Azolibe</span>, a
-                Frontend Developer and Co-Founder of{' '}
+                Full-Stack Developer and Co-Founder of{' '}
                 <a
                   href="https://collan.dev"
                   target="_blank"
@@ -85,11 +85,11 @@ export default function About() {
 
             <ScrollReveal delay={0.2}>
               <p className="text-text-muted text-lg leading-relaxed">
-                I specialize in building responsive web applications using{' '}
+                I build web applications end to end using{' '}
                 <span className="text-accent-light font-medium">React</span>,{' '}
                 <span className="text-accent-light font-medium">Next.js</span>, and{' '}
-                <span className="text-accent-light font-medium">Vue.js</span>,
-                with a strong foundation in TypeScript, Tailwind CSS, Firebase, and Supabase.
+                <span className="text-accent-light font-medium">Django</span>,
+                with a strong foundation in TypeScript, Tailwind CSS, PostgreSQL, and Supabase.
                 I've worked on diverse projects from{' '}
                 <span className="text-text font-medium">
                   EdTech platforms with payment integration

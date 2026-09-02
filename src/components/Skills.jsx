@@ -2,13 +2,6 @@ import { motion } from 'framer-motion'
 import ScrollReveal, { StaggerContainer, StaggerItem } from './ScrollReveal'
 import { skills } from '../data/projects'
 
-const iconMap = {
-  'Full-Stack Development': '',
-  'Frontend & Design': '',
-  'Tools & Platforms': '',
-  'Soft Skills': '',
-}
-
 export default function Skills() {
   return (
     <section className="py-28 lg:py-36 relative">
@@ -35,7 +28,6 @@ export default function Skills() {
           {Object.entries(skills).map(([category, items]) => (
             <StaggerItem key={category}>
               <div className="glass-card rounded-2xl p-7 h-full group hover:border-accent/20 transition-all duration-500">
-                <div className="mb-4"></div>
                 <h3 className="font-heading font-bold text-lg text-text mb-5 group-hover:text-accent-light transition-colors">
                   {category}
                 </h3>

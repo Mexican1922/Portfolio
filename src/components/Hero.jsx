@@ -91,7 +91,7 @@ export default function Hero() {
               transition={{ duration: 0.8, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
               className="font-heading font-extrabold text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[0.95] tracking-tight mb-6"
             >
-              <span className="text-text">Frontend</span>
+              <span className="text-text">Full-Stack</span>
               <br />
               Developer
             </motion.h1>
@@ -102,8 +102,8 @@ export default function Hero() {
               transition={{ duration: 0.7, delay: 0.55, ease: [0.16, 1, 0.3, 1] }}
               className="text-text-muted text-lg leading-relaxed max-w-lg mb-8"
             >
-              I build polished, high-performance web applications that users love.
-              From stunning frontends to robust payment integrations. I ship
+              I design and ship production web applications end to end. React and
+              TypeScript on the frontend, Python and Django on the backend. I ship
               real products for real clients.
             </motion.p>
 

@@ -104,14 +104,22 @@ export const otherProjects = [
 ];
 
 export const skills = {
-  "Full-Stack Development": ["React.js", "Vue.js", "Next.js", "REST APIs"],
-  "Frontend & Design": [
-    "JavaScript (ES6+)",
+  Frontend: [
+    "React 19",
     "TypeScript",
+    "Next.js",
+    "Vue.js",
     "Tailwind CSS",
-    "CSS3 & HTML5",
-    "Responsive Design",
-    "UI/UX Design",
+    "Framer Motion",
+    "Vite",
+  ],
+  Backend: [
+    "Python",
+    "Django",
+    "Django REST Framework",
+    "PostgreSQL",
+    "REST API design",
+    "Authentication & permissions",
   ],
   "Tools & Platforms": [
     "Git & GitHub",
@@ -119,8 +127,8 @@ export const skills = {
     "Render",
     "Firebase",
     "Supabase",
-    "Payment Systems",
-    "SEO Optimization",
+    "Payment integration",
+    "SEO",
   ],
   "Soft Skills": [
     "Client Communication",
