@@ -1,0 +1,14 @@
+# Binary assets must never go through line-ending conversion.
+#
+# The CV is an ASCII85-encoded PDF, so it contains no NUL bytes and git's
+# heuristic classifies it as text. With core.autocrlf=true that rewrote every
+# LF to CRLF on checkout, shifting the byte offsets in the PDF's xref table and
+# leaving the file structurally invalid. Pin these types as binary.
+*.pdf   binary
+*.png   binary
+*.jpg   binary
+*.jpeg  binary
+*.gif   binary
+*.ico   binary
+*.woff  binary
+*.woff2 binary
