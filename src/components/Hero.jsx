@@ -46,7 +46,7 @@ function useCountUp(target, duration = 1800) {
 export default function Hero() {
   const stat1 = useCountUp(12)
   const stat2 = useCountUp(2)
-  const stat3 = useCountUp(2400)
+  const stat3 = useCountUp(2000)
 
   return (
     <section className="relative min-h-screen flex items-center pt-24 overflow-hidden">
@@ -82,7 +82,7 @@ export default function Hero() {
                 style={{ background: 'linear-gradient(135deg, #7c3aed, #a855f7)' }}
               >
                 <Rocket size={14} />
-                Co-Founder @ Collan 2,400+ Techies
+                Co-Founder @ Collan 2,000+ Techies
               </a>
             </motion.div>
 

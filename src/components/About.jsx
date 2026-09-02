@@ -68,7 +68,7 @@ export default function About() {
                 >
                   Collan
                 </a>
-                , a developer networking platform with 2,400+ active techies worldwide.
+                , a developer networking platform with 2,000+ active techies worldwide.
               </p>
             </ScrollReveal>
 

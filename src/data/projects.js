@@ -14,13 +14,13 @@ export const featuredProjects = [
     title: "Collan",
     subtitle: "Co-Founded — Developer Networking & Collaboration Platform",
     description:
-      "Co-founded and built Collan, a full-featured platform where developers and founders connect, collaborate, and showcase projects worldwide. Features include a community feed, project marketplace, collaborations, live sessions, creator tools, and real-time chat. Grown to 2,400+ active techies.",
+      "Co-founded and built Collan, a full-featured platform where developers and founders connect, collaborate, and showcase projects worldwide. Features include a community feed, project marketplace, collaborations, live sessions, creator tools, and real-time chat. Grown to 2,000+ active techies.",
     image: "/images/collan.png",
     url: "https://collan.dev",
     tags: ["Co-Founder", "Full-Stack", "SaaS", "Community"],
     badge: "founder",
-    highlight: "Build The Future Together — 2,400+ Active Techies",
-    stats: { members: "2,400+", linkedin: "478+", whatsapp: "500+" },
+    highlight: "Build The Future Together — 2,000+ Active Techies",
+    stats: { members: "2,000+", linkedin: "478+", whatsapp: "500+" },
   },
   {
     id: "kings-tech",
@@ -148,11 +148,11 @@ export const skills = {
 };
 
 export const socialLinks = {
+  x: "https://x.com/Vibe_with_val",
   instagram: "https://instagram.com/iamazolibe",
   linkedin: "https://www.linkedin.com/in/chibuzor-azolibe-45578b323",
   github: "https://github.com/Mexican1922",
   email: "valentinechibuzor480@gmail.com",
   phone: "+2347049495832",
-  resume:
-    "https://drive.google.com/file/d/1Ji-izY8MM61zjFUiqJVvO3HHHNh_cQK6/view?usp=drivesdk",
+  resume: "/Valentine-Azolibe-CV.pdf",
 };

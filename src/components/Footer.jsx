@@ -9,7 +9,23 @@ const footerNav = [
   { label: 'Contact', path: '/contact' },
 ]
 
+// lucide's `X` is the close/cross glyph, not the brand mark, so draw the logo.
+function XLogo({ size = 18 }) {
+  return (
+    <svg
+      width={size}
+      height={size}
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      aria-hidden="true"
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  )
+}
+
 const socialIcons = [
+  { icon: XLogo, href: socialLinks.x, label: 'X (Twitter)', hoverColor: 'hover:text-white' },
   { icon: Instagram, href: socialLinks.instagram, label: 'Instagram', hoverColor: 'hover:text-pink-500' },
   { icon: Linkedin, href: socialLinks.linkedin, label: 'LinkedIn', hoverColor: 'hover:text-blue-500' },
   { icon: Github, href: socialLinks.github, label: 'GitHub', hoverColor: 'hover:text-white' },
