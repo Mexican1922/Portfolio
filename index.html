@@ -46,112 +46,156 @@
         --boot-bg: #050508;
         --boot-fg: #ededed;
         --boot-track: #1e1e2a;
+        --boot-hull: #8b5cf6;
+        --boot-trail: #06b6d4;
       }
       :root[data-theme='light'] {
         --boot-bg: #f8f9fc;
         --boot-fg: #1a1b2e;
         --boot-track: #dfe1ea;
+        --boot-hull: #7c3aed;
+        --boot-trail: #0891b2;
       }
       #boot {
         position: fixed;
         inset: 0;
         z-index: 60;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 1.5rem;
+        overflow: hidden;
         background: var(--boot-bg);
-        font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
         transition: opacity 0.35s ease;
       }
       #boot.is-done {
         opacity: 0;
         pointer-events: none;
       }
-      #boot-word {
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-        font-weight: 700;
-        font-size: 1.35rem;
-        letter-spacing: -0.02em;
-        color: var(--boot-fg);
-      }
-      #boot-dot {
-        width: 0.4rem;
-        height: 0.4rem;
-        border-radius: 9999px;
-        background: #8b5cf6;
-        animation: boot-dot 1.4s ease-in-out infinite;
-      }
-      /* Indeterminate sweep: a lit segment travelling across a dim track.
-         Reads as progress without claiming a percentage it cannot know. */
-      #boot-track {
-        position: relative;
-        width: 168px;
-        height: 3px;
-        border-radius: 2px;
-        overflow: hidden;
-        background: var(--boot-track);
-      }
-      #boot-track::after {
-        content: '';
+      #boot .speeder {
         position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 45%;
-        border-radius: 2px;
-        background: linear-gradient(90deg, #8b5cf6, #06b6d4);
-        animation: boot-sweep 1.15s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+        top: 50%;
+        left: 50%;
+        margin-left: -50px;
+        animation: boot-speeder 0.4s linear infinite;
       }
-      @keyframes boot-sweep {
-        0% {
-          transform: translateX(-105%);
-        }
-        100% {
-          transform: translateX(268%);
-        }
+      #boot .speeder > span {
+        height: 5px;
+        width: 35px;
+        background: var(--boot-hull);
+        position: absolute;
+        top: -19px;
+        left: 60px;
+        border-radius: 2px 10px 1px 0;
       }
-      @keyframes boot-dot {
-        0%,
-        100% {
-          opacity: 1;
-        }
-        50% {
-          opacity: 0.25;
-        }
+      #boot .base span {
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 6px solid transparent;
+        border-right: 100px solid var(--boot-hull);
+        border-bottom: 6px solid transparent;
+      }
+      #boot .base span::before {
+        content: "";
+        height: 22px;
+        width: 22px;
+        border-radius: 50%;
+        background: var(--boot-hull);
+        position: absolute;
+        right: -110px;
+        top: -16px;
+      }
+      #boot .base span::after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 0;
+        border-top: 0 solid transparent;
+        border-right: 55px solid var(--boot-hull);
+        border-bottom: 16px solid transparent;
+        top: -16px;
+        right: -98px;
+      }
+      #boot .face {
+        position: absolute;
+        height: 12px;
+        width: 20px;
+        background: var(--boot-hull);
+        border-radius: 20px 20px 0 0;
+        transform: rotate(-40deg);
+        right: -125px;
+        top: -15px;
+      }
+      #boot .face::after {
+        content: "";
+        height: 12px;
+        width: 12px;
+        background: var(--boot-hull);
+        right: 4px;
+        top: 7px;
+        position: absolute;
+        transform: rotate(40deg);
+        transform-origin: 50% 50%;
+        border-radius: 0 0 0 2px;
+      }
+      #boot .speeder > span > span {
+        width: 30px;
+        height: 1px;
+        background: var(--boot-trail);
+        position: absolute;
+        animation: boot-fazer1 0.2s linear infinite;
+      }
+      #boot .speeder > span > span:nth-child(2) { top: 3px; animation: boot-fazer2 0.4s linear infinite; }
+      #boot .speeder > span > span:nth-child(3) { top: 1px; animation: boot-fazer3 0.4s linear infinite; animation-delay: -1s; }
+      #boot .speeder > span > span:nth-child(4) { top: 4px; animation: boot-fazer4 1s linear infinite; animation-delay: -1s; }
+      #boot .longfazers { position: absolute; inset: 0; pointer-events: none; }
+      #boot .longfazers span {
+        position: absolute;
+        height: 2px;
+        width: 20%;
+        background: var(--boot-trail);
+        opacity: 0.35;
+      }
+      #boot .longfazers span:nth-child(1) { top: 20%; animation: boot-lf 0.6s linear infinite; animation-delay: -5s; }
+      #boot .longfazers span:nth-child(2) { top: 40%; animation: boot-lf2 0.8s linear infinite; animation-delay: -1s; }
+      #boot .longfazers span:nth-child(3) { top: 60%; animation: boot-lf3 0.6s linear infinite; }
+      #boot .longfazers span:nth-child(4) { top: 80%; animation: boot-lf4 0.5s linear infinite; animation-delay: -3s; }
+      @keyframes boot-fazer1 { 0% { left: 0; } 100% { left: -80px; opacity: 0; } }
+      @keyframes boot-fazer2 { 0% { left: 0; } 100% { left: -100px; opacity: 0; } }
+      @keyframes boot-fazer3 { 0% { left: 0; } 100% { left: -50px; opacity: 0; } }
+      @keyframes boot-fazer4 { 0% { left: 0; } 100% { left: -150px; opacity: 0; } }
+      @keyframes boot-lf  { 0% { left: 200%; } 100% { left: -200%; opacity: 0; } }
+      @keyframes boot-lf2 { 0% { left: 200%; } 100% { left: -200%; opacity: 0; } }
+      @keyframes boot-lf3 { 0% { left: 200%; } 100% { left: -100%; opacity: 0; } }
+      @keyframes boot-lf4 { 0% { left: 200%; } 100% { left: -100%; opacity: 0; } }
+      @keyframes boot-speeder {
+        0%   { transform: translate(2px, 1px) rotate(0deg); }
+        10%  { transform: translate(-1px, -3px) rotate(-1deg); }
+        20%  { transform: translate(-2px, 0px) rotate(1deg); }
+        30%  { transform: translate(1px, 2px) rotate(0deg); }
+        40%  { transform: translate(1px, -1px) rotate(1deg); }
+        50%  { transform: translate(-1px, 3px) rotate(-1deg); }
+        60%  { transform: translate(-1px, 1px) rotate(0deg); }
+        70%  { transform: translate(3px, 1px) rotate(-1deg); }
+        80%  { transform: translate(-2px, -1px) rotate(1deg); }
+        90%  { transform: translate(2px, 1px) rotate(0deg); }
+        100% { transform: translate(1px, -2px) rotate(-1deg); }
       }
       @media (prefers-reduced-motion: reduce) {
-        #boot-track::after {
-          animation: none;
-          width: 100%;
-          opacity: 0.7;
-        }
-        #boot-dot {
-          animation: none;
-        }
+        #boot .speeder,
+        #boot .speeder > span > span { animation: none; }
+        #boot .longfazers { display: none; }
       }
     </style>
   </head>
   <body>
     <div id="root"></div>
     <div id="boot" role="status" aria-live="polite">
-      <div id="boot-word">
-        <span>Valentine</span><span>Codes</span><span id="boot-dot"></span>
+      <div class="longfazers" aria-hidden="true">
+        <span></span><span></span><span></span><span></span>
       </div>
-      <div id="boot-track" aria-hidden="true"></div>
-      <span
-        style="
-          position: absolute;
-          width: 1px;
-          height: 1px;
-          overflow: hidden;
-          clip: rect(0 0 0 0);
-        "
-        >Loading portfolio</span
-      >
+      <div class="speeder" aria-hidden="true">
+        <span><span></span><span></span><span></span><span></span></span>
+        <div class="base"><span></span><div class="face"></div></div>
+      </div>
+      <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Loading portfolio</span>
     </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>

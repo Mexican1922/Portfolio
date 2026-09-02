@@ -225,106 +225,211 @@ body {
 }
 
 /* ──────────────────────────────────────────
-   Route Loading Indicator
+   Speeder Loader
+   Rocket-and-slipstream, after the Uiverse "speeder" (anand_4957). The
+   original is a fixed black silhouette positioned against the viewport; here
+   the ink comes from theme tokens so it survives the light/dark toggle, and
+   the whole thing is scoped to a stage element rather than the page.
    ────────────────────────────────────────── */
-/* Covers the viewport so a navigation shows the mark and the sweep alone,
-   matching the boot screen, instead of chrome around an empty column. */
-.route-loader {
+.speeder-stage {
   position: fixed;
   inset: 0;
   z-index: 70;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 1.5rem;
-  background: var(--theme-bg);
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s ease;
-}
-
-.route-loader.is-visible {
-  opacity: 1;
-}
-
-.route-loader__mark {
-  display: flex;
-  align-items: center;
-  gap: 0.3rem;
-  font-family: var(--font-heading, inherit);
-  font-weight: 700;
-  font-size: 1.35rem;
-  letter-spacing: -0.02em;
-  color: var(--theme-text);
-}
-
-.route-loader__dot {
-  width: 0.4rem;
-  height: 0.4rem;
-  border-radius: 9999px;
-  background: var(--theme-accent);
-  animation: boot-dot 1.4s ease-in-out infinite;
-}
-
-@keyframes boot-dot {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0.25;
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .route-loader__dot {
-    animation: none;
-  }
-}
-
-/* Same sweep as the boot screen, so a slow first load and a slow navigation
-   read as one idea rather than two unrelated widgets. */
-.page-loader {
-  position: relative;
-  width: 168px;
-  height: 3px;
-  border-radius: 2px;
   overflow: hidden;
-  background: var(--theme-border);
+  background: var(--theme-bg);
   transition: opacity 0.2s ease;
+  /* violet hull, cyan exhaust — the pairing already used across the site */
+  --hull: var(--theme-accent);
+  --trail: var(--theme-accent-2);
 }
 
-.page-loader::after {
-  content: '';
+.speeder {
   position: absolute;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 45%;
-  border-radius: 2px;
-  background: linear-gradient(
-    90deg,
-    var(--theme-accent),
-    var(--theme-accent-2)
-  );
-  animation: boot-sweep 1.15s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+  top: 50%;
+  left: 50%;
+  margin-left: -50px;
+  animation: speeder 0.4s linear infinite;
 }
 
-@keyframes boot-sweep {
-  0% {
-    transform: translateX(-105%);
-  }
-  100% {
-    transform: translateX(268%);
-  }
+.speeder > span {
+  height: 5px;
+  width: 35px;
+  background: var(--hull);
+  position: absolute;
+  top: -19px;
+  left: 60px;
+  border-radius: 2px 10px 1px 0;
 }
 
+.speeder .base span {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 6px solid transparent;
+  border-right: 100px solid var(--hull);
+  border-bottom: 6px solid transparent;
+}
+
+.speeder .base span::before {
+  content: "";
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  background: var(--hull);
+  position: absolute;
+  right: -110px;
+  top: -16px;
+}
+
+.speeder .base span::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 0 solid transparent;
+  border-right: 55px solid var(--hull);
+  border-bottom: 16px solid transparent;
+  top: -16px;
+  right: -98px;
+}
+
+.speeder .face {
+  position: absolute;
+  height: 12px;
+  width: 20px;
+  background: var(--hull);
+  border-radius: 20px 20px 0 0;
+  transform: rotate(-40deg);
+  right: -125px;
+  top: -15px;
+}
+
+.speeder .face::after {
+  content: "";
+  height: 12px;
+  width: 12px;
+  background: var(--hull);
+  right: 4px;
+  top: 7px;
+  position: absolute;
+  transform: rotate(40deg);
+  transform-origin: 50% 50%;
+  border-radius: 0 0 0 2px;
+}
+
+.speeder > span > span {
+  width: 30px;
+  height: 1px;
+  background: var(--trail);
+  position: absolute;
+  animation: fazer1 0.2s linear infinite;
+}
+
+.speeder > span > span:nth-child(2) {
+  top: 3px;
+  animation: fazer2 0.4s linear infinite;
+}
+.speeder > span > span:nth-child(3) {
+  top: 1px;
+  animation: fazer3 0.4s linear infinite;
+  animation-delay: -1s;
+}
+.speeder > span > span:nth-child(4) {
+  top: 4px;
+  animation: fazer4 1s linear infinite;
+  animation-delay: -1s;
+}
+
+.longfazers {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.longfazers span {
+  position: absolute;
+  height: 2px;
+  width: 20%;
+  background: var(--trail);
+  opacity: 0.35;
+}
+
+.longfazers span:nth-child(1) {
+  top: 20%;
+  animation: lf 0.6s linear infinite;
+  animation-delay: -5s;
+}
+.longfazers span:nth-child(2) {
+  top: 40%;
+  animation: lf2 0.8s linear infinite;
+  animation-delay: -1s;
+}
+.longfazers span:nth-child(3) {
+  top: 60%;
+  animation: lf3 0.6s linear infinite;
+}
+.longfazers span:nth-child(4) {
+  top: 80%;
+  animation: lf4 0.5s linear infinite;
+  animation-delay: -3s;
+}
+
+@keyframes fazer1 {
+  0% { left: 0; }
+  100% { left: -80px; opacity: 0; }
+}
+@keyframes fazer2 {
+  0% { left: 0; }
+  100% { left: -100px; opacity: 0; }
+}
+@keyframes fazer3 {
+  0% { left: 0; }
+  100% { left: -50px; opacity: 0; }
+}
+@keyframes fazer4 {
+  0% { left: 0; }
+  100% { left: -150px; opacity: 0; }
+}
+@keyframes lf {
+  0% { left: 200%; }
+  100% { left: -200%; opacity: 0; }
+}
+@keyframes lf2 {
+  0% { left: 200%; }
+  100% { left: -200%; opacity: 0; }
+}
+@keyframes lf3 {
+  0% { left: 200%; }
+  100% { left: -100%; opacity: 0; }
+}
+@keyframes lf4 {
+  0% { left: 200%; }
+  100% { left: -100%; opacity: 0; }
+}
+@keyframes speeder {
+  0%   { transform: translate(2px, 1px) rotate(0deg); }
+  10%  { transform: translate(-1px, -3px) rotate(-1deg); }
+  20%  { transform: translate(-2px, 0px) rotate(1deg); }
+  30%  { transform: translate(1px, 2px) rotate(0deg); }
+  40%  { transform: translate(1px, -1px) rotate(1deg); }
+  50%  { transform: translate(-1px, 3px) rotate(-1deg); }
+  60%  { transform: translate(-1px, 1px) rotate(0deg); }
+  70%  { transform: translate(3px, 1px) rotate(-1deg); }
+  80%  { transform: translate(-2px, -1px) rotate(1deg); }
+  90%  { transform: translate(2px, 1px) rotate(0deg); }
+  100% { transform: translate(1px, -2px) rotate(-1deg); }
+}
+
+/* The shake and the slipstream are the whole effect; without motion the
+   rocket simply sits still rather than juddering in place. */
 @media (prefers-reduced-motion: reduce) {
-  .page-loader::after {
+  .speeder,
+  .speeder > span > span,
+  .longfazers span {
     animation: none;
-    width: 100%;
-    opacity: 0.7;
+  }
+  .longfazers span {
+    display: none;
   }
 }
 
