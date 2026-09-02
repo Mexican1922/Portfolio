@@ -61,8 +61,42 @@
         inset: 0;
         z-index: 60;
         overflow: hidden;
+        display: grid;
+        place-items: center;
         background: var(--boot-bg);
+        font-family: Epilogue, Outfit, ui-sans-serif, system-ui, sans-serif;
         transition: opacity 0.35s ease;
+      }
+      #boot .stack {
+        position: relative;
+        z-index: 2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2.25rem;
+      }
+      #boot .word {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-weight: 700;
+        font-size: 1.35rem;
+        letter-spacing: -0.02em;
+        color: var(--boot-fg);
+      }
+      #boot .word i {
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 9999px;
+        background: var(--boot-hull);
+        margin-left: 0.1rem;
+      }
+      /* The rocket is absolutely placed against this box rather than the
+         viewport, so the wordmark can own the space above it. */
+      #boot .ship {
+        position: relative;
+        width: 260px;
+        height: 56px;
       }
       #boot.is-done {
         opacity: 0;
@@ -72,9 +106,10 @@
         position: absolute;
         top: 50%;
         left: 50%;
-        margin-left: -50px;
+        margin-left: -65px; /* the hull sits right of its own origin; this centres its visible mass under the wordmark */
         animation: boot-speeder 0.4s linear infinite;
       }
+      #boot .longfazers { z-index: 1; }
       #boot .speeder > span {
         height: 5px;
         width: 35px;
@@ -191,9 +226,16 @@
       <div class="longfazers" aria-hidden="true">
         <span></span><span></span><span></span><span></span>
       </div>
-      <div class="speeder" aria-hidden="true">
-        <span><span></span><span></span><span></span><span></span></span>
-        <div class="base"><span></span><div class="face"></div></div>
+      <div class="stack">
+        <div class="word" aria-hidden="true">
+          <span>Valentine</span><span>Codes</span><i></i>
+        </div>
+        <div class="ship" aria-hidden="true">
+          <div class="speeder">
+            <span><span></span><span></span><span></span><span></span></span>
+            <div class="base"><span></span><div class="face"></div></div>
+          </div>
+        </div>
       </div>
       <span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Loading portfolio</span>
     </div>

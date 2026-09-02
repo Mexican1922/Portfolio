@@ -32,16 +32,25 @@ export default function PageLoader({ delay = 140 }) {
         <span />
         <span />
       </div>
-      <div className="speeder" aria-hidden>
-        <span>
-          <span />
-          <span />
-          <span />
-          <span />
-        </span>
-        <div className="base">
-          <span />
-          <div className="face" />
+      <div className="speeder-stack" aria-hidden>
+        <div className="speeder-word">
+          <span>Valentine</span>
+          <span>Codes</span>
+          <i />
+        </div>
+        <div className="speeder-ship">
+          <div className="speeder">
+            <span>
+              <span />
+              <span />
+              <span />
+              <span />
+            </span>
+            <div className="base">
+              <span />
+              <div className="face" />
+            </div>
+          </div>
         </div>
       </div>
     </div>

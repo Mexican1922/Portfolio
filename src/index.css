@@ -236,6 +236,8 @@ body {
   inset: 0;
   z-index: 70;
   overflow: hidden;
+  display: grid;
+  place-items: center;
   background: var(--theme-bg);
   transition: opacity 0.2s ease;
   /* violet hull, cyan exhaust — the pairing already used across the site */
@@ -243,11 +245,47 @@ body {
   --trail: var(--theme-accent-2);
 }
 
+.speeder-stack {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2.25rem;
+}
+
+.speeder-word {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--theme-text);
+}
+
+.speeder-word i {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background: var(--hull);
+  margin-left: 0.1rem;
+}
+
+/* The rocket anchors to this box rather than the viewport, leaving the
+   wordmark the space above it. */
+.speeder-ship {
+  position: relative;
+  width: 260px;
+  height: 56px;
+}
+
 .speeder {
   position: absolute;
   top: 50%;
   left: 50%;
-  margin-left: -50px;
+  margin-left: -65px; /* the hull sits right of its own origin; this centres its visible mass under the wordmark */
   animation: speeder 0.4s linear infinite;
 }
 
@@ -343,6 +381,7 @@ body {
 .longfazers {
   position: absolute;
   inset: 0;
+  z-index: 1;
   pointer-events: none;
 }
 
