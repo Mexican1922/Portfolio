@@ -26,7 +26,7 @@ export default function PageLoader({ delay = 140 }) {
       <span className="sr-only">Loading page</span>
       <span
         aria-hidden
-        className={`page-spinner ${visible ? 'opacity-100' : 'opacity-0'}`}
+        className={`page-loader ${visible ? 'opacity-100' : 'opacity-0'}`}
       />
     </div>
   )

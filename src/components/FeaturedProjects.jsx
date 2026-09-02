@@ -46,6 +46,10 @@ export default function FeaturedProjects() {
                       <img
                         src={project.image}
                         alt={project.title}
+                        // The first card is above the fold; the rest are not,
+                        // and these screenshots run to 2MB apiece.
+                        loading={index === 0 ? 'eager' : 'lazy'}
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                     </div>

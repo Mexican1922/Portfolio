@@ -225,25 +225,50 @@ body {
 }
 
 /* ──────────────────────────────────────────
-   Route Loading Spinner
+   Route Loading Indicator
    ────────────────────────────────────────── */
-.page-spinner {
-  width: 2rem;
-  height: 2rem;
-  border-radius: 9999px;
-  /* Track stays dim; one lit arc gives the ring its direction. */
-  border: 2px solid var(--theme-border-light);
-  border-top-color: var(--theme-accent);
-  animation: spin-slow 0.7s linear infinite;
+/* Same sweep as the boot screen, so a slow first load and a slow navigation
+   read as one idea rather than two unrelated widgets. */
+.page-loader {
+  position: relative;
+  width: 168px;
+  height: 3px;
+  border-radius: 2px;
+  overflow: hidden;
+  background: var(--theme-border);
   transition: opacity 0.2s ease;
 }
 
+.page-loader::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 45%;
+  border-radius: 2px;
+  background: linear-gradient(
+    90deg,
+    var(--theme-accent),
+    var(--theme-accent-2)
+  );
+  animation: boot-sweep 1.15s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+}
+
+@keyframes boot-sweep {
+  0% {
+    transform: translateX(-105%);
+  }
+  100% {
+    transform: translateX(268%);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
-  .page-spinner {
+  .page-loader::after {
     animation: none;
-    /* Without motion, a full ring in the accent still reads as "working". */
-    border-color: var(--theme-accent);
-    opacity: 0.6;
+    width: 100%;
+    opacity: 0.7;
   }
 }
 

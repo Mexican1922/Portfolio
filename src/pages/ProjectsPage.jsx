@@ -137,6 +137,8 @@ export default function ProjectsPage() {
                       <img
                         src={project.image}
                         alt={project.title}
+                        loading="lazy"
+                        decoding="async"
                         className="w-full h-full object-cover"
                       />
                       {/* Badges overlay */}

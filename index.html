@@ -15,9 +15,144 @@
       href="https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100..900;1,100..900&family=Outfit:wght@100..900&display=swap"
       rel="stylesheet"
     />
+    <script>
+      // Apply the saved theme before first paint. Without this the page renders
+      // dark for a frame before React reads localStorage, which light-theme
+      // users see as a flash.
+      (function () {
+        try {
+          var t = localStorage.getItem('portfolio-theme');
+          if (!t) {
+            t = window.matchMedia('(prefers-color-scheme: light)').matches
+              ? 'light'
+              : 'dark';
+          }
+          document.documentElement.setAttribute('data-theme', t);
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+    <style>
+      /* Boot screen. Inlined so it paints on the first frame — the app bundle
+         is ~390KB and #root is empty until it parses, which on a slow
+         connection is several seconds of blank page. Removed once React
+         mounts (see main.jsx). */
+      /* Themed through custom properties rather than `[data-theme] #boot-*`
+         descendant rules: the properties inherit from :root, so every part of
+         the boot screen re-resolves together whenever the theme attribute
+         changes, with no reliance on descendant-selector invalidation. */
+      :root {
+        --boot-bg: #050508;
+        --boot-fg: #ededed;
+        --boot-track: #1e1e2a;
+      }
+      :root[data-theme='light'] {
+        --boot-bg: #f8f9fc;
+        --boot-fg: #1a1b2e;
+        --boot-track: #dfe1ea;
+      }
+      #boot {
+        position: fixed;
+        inset: 0;
+        z-index: 60;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 1.5rem;
+        background: var(--boot-bg);
+        font-family: Outfit, ui-sans-serif, system-ui, sans-serif;
+        transition: opacity 0.35s ease;
+      }
+      #boot.is-done {
+        opacity: 0;
+        pointer-events: none;
+      }
+      #boot-word {
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+        font-weight: 700;
+        font-size: 1.35rem;
+        letter-spacing: -0.02em;
+        color: var(--boot-fg);
+      }
+      #boot-dot {
+        width: 0.4rem;
+        height: 0.4rem;
+        border-radius: 9999px;
+        background: #8b5cf6;
+        animation: boot-dot 1.4s ease-in-out infinite;
+      }
+      /* Indeterminate sweep: a lit segment travelling across a dim track.
+         Reads as progress without claiming a percentage it cannot know. */
+      #boot-track {
+        position: relative;
+        width: 168px;
+        height: 3px;
+        border-radius: 2px;
+        overflow: hidden;
+        background: var(--boot-track);
+      }
+      #boot-track::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 45%;
+        border-radius: 2px;
+        background: linear-gradient(90deg, #8b5cf6, #06b6d4);
+        animation: boot-sweep 1.15s cubic-bezier(0.65, 0, 0.35, 1) infinite;
+      }
+      @keyframes boot-sweep {
+        0% {
+          transform: translateX(-105%);
+        }
+        100% {
+          transform: translateX(268%);
+        }
+      }
+      @keyframes boot-dot {
+        0%,
+        100% {
+          opacity: 1;
+        }
+        50% {
+          opacity: 0.25;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #boot-track::after {
+          animation: none;
+          width: 100%;
+          opacity: 0.7;
+        }
+        #boot-dot {
+          animation: none;
+        }
+      }
+    </style>
   </head>
   <body>
     <div id="root"></div>
+    <div id="boot" role="status" aria-live="polite">
+      <div id="boot-word">
+        <span>Valentine</span><span>Codes</span><span id="boot-dot"></span>
+      </div>
+      <div id="boot-track" aria-hidden="true"></div>
+      <span
+        style="
+          position: absolute;
+          width: 1px;
+          height: 1px;
+          overflow: hidden;
+          clip: rect(0 0 0 0);
+        "
+        >Loading portfolio</span
+      >
+    </div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
 </html>
