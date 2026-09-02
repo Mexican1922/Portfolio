@@ -190,6 +190,12 @@ export const skills = {
 
 export const socialLinks = {
   x: "https://x.com/Vibe_with_val",
+  // 100 consecutive days shipping in public, with the Day 100 post as proof.
+  // Externally verifiable, which is what separates it from a claim.
+  buildInPublic: {
+    days: 100,
+    proof: "https://x.com/Vibe_with_val/status/2088517731775631751",
+  },
   instagram: "https://instagram.com/iamazolibe",
   linkedin: "https://www.linkedin.com/in/valentine-azolibe-45578b323",
   github: "https://github.com/Mexican1922",
