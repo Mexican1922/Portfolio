@@ -227,6 +227,62 @@ body {
 /* ──────────────────────────────────────────
    Route Loading Indicator
    ────────────────────────────────────────── */
+/* Covers the viewport so a navigation shows the mark and the sweep alone,
+   matching the boot screen, instead of chrome around an empty column. */
+.route-loader {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  background: var(--theme-bg);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.route-loader.is-visible {
+  opacity: 1;
+}
+
+.route-loader__mark {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-family: var(--font-heading, inherit);
+  font-weight: 700;
+  font-size: 1.35rem;
+  letter-spacing: -0.02em;
+  color: var(--theme-text);
+}
+
+.route-loader__dot {
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 9999px;
+  background: var(--theme-accent);
+  animation: boot-dot 1.4s ease-in-out infinite;
+}
+
+@keyframes boot-dot {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.25;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .route-loader__dot {
+    animation: none;
+  }
+}
+
 /* Same sweep as the boot screen, so a slow first load and a slow navigation
    read as one idea rather than two unrelated widgets. */
 .page-loader {

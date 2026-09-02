@@ -3,10 +3,13 @@ import { useEffect, useState } from 'react'
 /**
  * Suspense fallback shown while a lazily-loaded route chunk arrives.
  *
- * On a warm cache a chunk can resolve in a few milliseconds, and a spinner that
- * appears and vanishes inside one frame reads as a glitch. So nothing is drawn
- * for `delay` ms — fast navigations stay silent, and the spinner only appears
- * when there is genuinely something to wait for.
+ * Covers the viewport with just the wordmark and the sweep — the same thing the
+ * boot screen shows — rather than sitting in the page with the nav and footer
+ * framing an empty column. Loading should look like one state, not a hole.
+ *
+ * Nothing is drawn for `delay` ms: a chunk on a warm cache resolves in a few
+ * milliseconds, and a loader that appears and vanishes inside one frame reads
+ * as a glitch.
  */
 export default function PageLoader({ delay = 140 }) {
   const [visible, setVisible] = useState(false)
@@ -18,16 +21,18 @@ export default function PageLoader({ delay = 140 }) {
 
   return (
     <div
-      className="min-h-[60vh] flex items-center justify-center"
+      className={`route-loader ${visible ? 'is-visible' : ''}`}
       role="status"
       aria-live="polite"
       aria-busy="true"
     >
       <span className="sr-only">Loading page</span>
-      <span
-        aria-hidden
-        className={`page-loader ${visible ? 'opacity-100' : 'opacity-0'}`}
-      />
+      <div aria-hidden className="route-loader__mark">
+        <span>Valentine</span>
+        <span>Codes</span>
+        <span className="route-loader__dot" />
+      </div>
+      <div aria-hidden className="page-loader" />
     </div>
   )
 }
