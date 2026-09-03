@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import ScrollReveal, { StaggerContainer, StaggerItem } from './ScrollReveal'
 import { skills } from '../data/projects'
+import StackIcon from './StackIcon'
 
 export default function Skills() {
   return (
@@ -37,7 +38,7 @@ export default function Skills() {
                       key={skill}
                       className="flex items-center gap-3 text-sm text-text-muted"
                     >
-                      <span className="w-1 h-1 rounded-full bg-accent flex-shrink-0" />
+                      <StackIcon name={skill} size={17} className="text-text-dim" />
                       {skill}
                     </li>
                   ))}
