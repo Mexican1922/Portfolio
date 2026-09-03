@@ -1,15 +1,5 @@
 export const featuredProjects = [
   {
-    id: "metermate",
-    title: "MeterMate",
-    description:
-      "A complete energy dashboard application allowing users to effortlessly set up their house and seamlessly join households. Features a sleek, modern, dark-themed UI, robust authentication, and real-time database management tailored for premium user experiences.",
-    image: "/images/metermate.webp",
-    url: "https://naija-metermate.vercel.app",
-    tags: ["React", "Next.js", "Full-Stack", "Supabase"],
-    badge: "fullstack",
-  },
-  {
     id: "collan",
     title: "Collan",
     subtitle: "Co-Founded — Developer Networking & Collaboration Platform",
@@ -63,6 +53,16 @@ export const featuredProjects = [
 ];
 
 export const otherProjects = [
+  {
+    id: "metermate",
+    title: "MeterMate",
+    description:
+      "A complete energy dashboard application allowing users to effortlessly set up their house and seamlessly join households. Features a sleek, modern, dark-themed UI, robust authentication, and real-time database management tailored for premium user experiences.",
+    image: "/images/metermate.webp",
+    url: "https://naija-metermate.vercel.app",
+    tags: ["React", "Next.js", "Full-Stack", "Supabase"],
+    badge: "fullstack",
+  },
   {
     id: "uda-music",
     title: "UDA — Music Streaming",

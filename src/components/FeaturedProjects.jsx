@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { motion } from 'framer-motion'
 import { ArrowUpRight, ExternalLink, Github } from 'lucide-react'
 import MaterialIcon from './MaterialIcon'
+import SpotlightCard from './SpotlightCard'
 import ScrollReveal from './ScrollReveal'
 import { featuredProjects } from '../data/projects'
 
@@ -37,7 +38,7 @@ export default function FeaturedProjects() {
           {featuredProjects.map((project, index) => (
             <ScrollReveal key={project.id} delay={index * 0.15}>
               <div className="group block">
-                <div className="glass-card rounded-2xl lg:rounded-3xl overflow-hidden project-card-hover glow-border">
+                <SpotlightCard className="glass-card rounded-2xl lg:rounded-3xl overflow-hidden project-card-hover glow-border">
                   <div className="grid lg:grid-cols-2 gap-0">
                     {/* Image */}
                     <div
@@ -120,7 +121,7 @@ export default function FeaturedProjects() {
                       </div>
                     </div>
                   </div>
-                </div>
+                </SpotlightCard>
               </div>
             </ScrollReveal>
           ))}

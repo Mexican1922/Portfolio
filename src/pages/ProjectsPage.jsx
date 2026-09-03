@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowUpRight, ExternalLink, Github } from 'lucide-react'
 import MaterialIcon from '../components/MaterialIcon'
+import SpotlightCard from '../components/SpotlightCard'
 import ScrollReveal from '../components/ScrollReveal'
 import { featuredProjects, otherProjects } from '../data/projects'
 
@@ -76,16 +77,15 @@ export default function ProjectsPage() {
               Portfolio
             </p>
             <h1 className="font-heading font-extrabold text-3xl sm:text-4xl md:text-5xl lg:text-7xl tracking-tight mb-4">
-              My
-              <span className="text-text"> Best</span> Creations
+              Things I&apos;ve
+              <span className="text-text"> Shipped</span>
               <span className="inline-block w-3 h-3 rounded-full bg-accent ml-2 align-middle" />
             </h1>
             <p className="text-text-muted text-lg max-w-2xl leading-relaxed">
-              I discovered frontend development back in university, and my
-              passion grew stronger when I trained at Aptech. Today, I build
-              production-ready applications for real clients — from EdTech
-              platforms to professional business websites. Every project is more
-              than code — it's a story brought to life.
+              Production work for real clients and real users: an EdTech
+              platform handling payments, a textile storefront its owner runs
+              through Django admin, a smart-energy company operating across 12+
+              states. Live links and source where it&apos;s public.
             </p>
           </motion.div>
         </div>
@@ -132,7 +132,7 @@ export default function ProjectsPage() {
                 layout
               >
                 <div className="group block h-full">
-                  <div className="glass-card rounded-2xl overflow-hidden h-full project-card-hover glow-border flex flex-col">
+                  <SpotlightCard className="glass-card rounded-2xl overflow-hidden h-full project-card-hover glow-border flex flex-col">
                     {/* Image */}
                     <div className="project-image-wrapper aspect-video relative">
                       <img
@@ -217,7 +217,7 @@ export default function ProjectsPage() {
                         </a>
                       )}
                     </div>
-                  </div>
+                  </SpotlightCard>
                 </div>
               </motion.div>
             ))}
