@@ -559,6 +559,10 @@ body {
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.4s ease;
+  /* Decoration only. Without this the overlay covers the whole card and
+     swallows every click inside it — the "View Code" and "Visit Live Site"
+     links included. */
+  pointer-events: none;
 }
 
 .glow-border:hover::before {
