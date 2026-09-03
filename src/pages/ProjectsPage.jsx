@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowUpRight, ExternalLink, Github } from 'lucide-react'
 import MaterialIcon from '../components/MaterialIcon'
-import SpotlightCard from '../components/SpotlightCard'
+import TiltCard from '../components/TiltCard'
 import ScrollReveal from '../components/ScrollReveal'
 import { featuredProjects, otherProjects } from '../data/projects'
 
@@ -132,7 +132,7 @@ export default function ProjectsPage() {
                 layout
               >
                 <div className="group block h-full">
-                  <SpotlightCard className="glass-card rounded-2xl overflow-hidden h-full project-card-hover glow-border flex flex-col">
+                  <TiltCard className="glass-card rounded-2xl overflow-hidden h-full project-card-hover flex flex-col">
                     {/* Image */}
                     <div className="project-image-wrapper aspect-video relative">
                       {project.image ? (
@@ -240,7 +240,7 @@ export default function ProjectsPage() {
                         </a>
                       )}
                     </div>
-                  </SpotlightCard>
+                  </TiltCard>
                 </div>
               </motion.div>
             ))}

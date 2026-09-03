@@ -536,39 +536,6 @@ body {
 /* ──────────────────────────────────────────
    Glow Border Effect
    ────────────────────────────────────────── */
-.glow-border {
-  position: relative;
-}
-
-.glow-border::before {
-  content: "";
-  position: absolute;
-  inset: -1px;
-  border-radius: inherit;
-  padding: 1px;
-  background: linear-gradient(
-    135deg,
-    var(--theme-accent),
-    transparent,
-    var(--theme-accent-2)
-  );
-  -webkit-mask:
-    linear-gradient(#fff 0 0) content-box,
-    linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  opacity: 0;
-  transition: opacity 0.4s ease;
-  /* Decoration only. Without this the overlay covers the whole card and
-     swallows every click inside it — the "View Code" and "Visit Live Site"
-     links included. */
-  pointer-events: none;
-}
-
-.glow-border:hover::before {
-  opacity: 1;
-}
-
 /* ──────────────────────────────────────────
    Badge Styles
    ────────────────────────────────────────── */
@@ -677,45 +644,41 @@ body {
 }
 
 /* ──────────────────────────────────────────
-   Spotlight Hover
-   A soft light tracking the cursor across a card. Position arrives as
-   --spot-x / --spot-y from a pointermove handler, so the effect costs no
-   React renders.
+   Tilt Hover
+   The card leans toward the cursor. Rotation arrives as --tilt-x / --tilt-y
+   from a pointermove handler, so the effect costs no React renders.
    ────────────────────────────────────────── */
-.spotlight {
-  position: relative;
-  --spot-x: 50%;
-  --spot-y: 50%;
-  --spot-o: 0;
+.tilt {
+  /* Perspective lives on the parent so the child rotates in a real frustum.
+     Putting it on the rotating element itself flattens the effect. */
+  perspective: 1000px;
+  height: 100%;
+  /* Defaults belong here, on the element the handler writes to. Declaring
+     them on .tilt__inner instead would shadow the inherited value and the
+     card would never move. */
+  --tilt-x: 0deg;
+  --tilt-y: 0deg;
 }
 
-.spotlight__glow {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  border-radius: inherit;
-  opacity: var(--spot-o);
-  transition: opacity 0.35s ease;
-  background: radial-gradient(
-    340px circle at var(--spot-x) var(--spot-y),
-    var(--theme-accent-glow),
-    transparent 70%
-  );
-  /* Decoration. Without this it covers the card and eats every click inside,
-     the same way the border glow did. */
-  pointer-events: none;
+.tilt__inner {
+  height: 100%;
+  transform: rotateX(var(--tilt-x)) rotateY(var(--tilt-y));
+  /* Only the settle back to flat is eased. Following the cursor has to be
+     instant, or the card lags behind the pointer and feels broken. */
+  transition: transform 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  transform-style: preserve-3d;
+  will-change: transform;
 }
 
-/* Card content has to sit above the glow, or the light washes over the text
-   instead of behind it. */
-.spotlight > *:not(.spotlight__glow) {
-  position: relative;
-  z-index: 2;
+.tilt:hover .tilt__inner {
+  transition: none;
 }
 
-/* The light tracks a pointer, so it says nothing without one. */
+/* Nothing to lean toward without a pointer, and a card that tips itself is
+   exactly the kind of motion reduced-motion users are asking not to see. */
 @media (prefers-reduced-motion: reduce), (hover: none) {
-  .spotlight__glow {
-    display: none;
+  .tilt__inner {
+    transform: none;
   }
 }
+
