@@ -1,6 +1,6 @@
 import { Routes, Route, useLocation } from 'react-router-dom'
 import { Suspense, lazy } from 'react'
-import { AnimatePresence, motion } from 'framer-motion'
+import { AnimatePresence, motion, MotionConfig } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import BackToTop from './components/BackToTop'
@@ -76,6 +76,9 @@ export default function App() {
   const location = useLocation()
 
   return (
+    // `reducedMotion="user"` makes every framer animation on the site honour
+    // the OS setting, rather than each component remembering to check.
+    <MotionConfig reducedMotion="user">
     <div className="grain-overlay min-h-screen flex flex-col">
       <Navbar />
       <main className="flex-1">
@@ -123,5 +126,6 @@ export default function App() {
       <Footer />
       <BackToTop />
     </div>
+    </MotionConfig>
   )
 }
