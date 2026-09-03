@@ -54,22 +54,13 @@ export const featuredProjects = [
 
 export const otherProjects = [
   {
-    id: "under-nda",
-    title: "Client Work Under NDA",
-    subtitle: "Client Projects — Not Publicly Attributable",
-    description:
-      "Additional production work delivered for clients whose agreements do not permit attribution. No names, screenshots or source — but the stack is the same one every project on this page is built with, and references are available on request.",
-    url: null,
-    tags: ["Client Work", "React", "Django"],
-    badge: "client",
-  },
-  {
     id: "metermate",
     title: "MeterMate",
     description:
       "A complete energy dashboard application allowing users to effortlessly set up their house and seamlessly join households. Features a sleek, modern, dark-themed UI, robust authentication, and real-time database management tailored for premium user experiences.",
     image: "/images/metermate.webp",
     url: "https://naija-metermate.vercel.app",
+    repo: "https://github.com/Mexican1922/metermate",
     tags: ["React", "Next.js", "Full-Stack", "Supabase"],
     badge: "fullstack",
   },
@@ -80,6 +71,7 @@ export const otherProjects = [
       "A music streaming service with playlists, artist pages, search, listening history, and a recommendation engine. React and TypeScript on the front, Django REST on the back.",
     image: "/images/uda-home.webp",
     url: "https://uda-obi.vercel.app",
+    repo: "https://github.com/Mexican1922/uda-frontend",
     tags: ["React", "Django", "Full-Stack"],
     badge: "fullstack",
   },
@@ -90,6 +82,7 @@ export const otherProjects = [
       "A digital wallet PWA: send money, buy airtime and data, pay bills, and track every transaction. Installs like a native app.",
     image: "/images/padi-more-options.webp",
     url: "https://naija-padipay.vercel.app",
+    repo: "https://github.com/Mexican1922/padipay",
     tags: ["React", "Fintech", "PWA"],
     badge: "frontend",
   },
