@@ -6,11 +6,12 @@ import { useEffect, useState } from 'react'
  * Covers the viewport so a navigation shows the rocket alone rather than the
  * nav and footer framing an empty column.
  *
- * Draws nothing for `delay` ms: a chunk on a warm cache resolves in a few
- * milliseconds, and a loader that appears and vanishes inside one frame reads
- * as a glitch.
+ * Appears immediately: MIN_LOADER_MS in App.jsx already guarantees the chunk
+ * cannot resolve inside a frame, so the hold-off that used to prevent a flash
+ * would now just eat into the time the loader is visible. Set a `delay` if
+ * that floor is ever removed.
  */
-export default function PageLoader({ delay = 140 }) {
+export default function PageLoader({ delay = 0 }) {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {

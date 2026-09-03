@@ -19,6 +19,7 @@
       // Apply the saved theme before first paint. Without this the page renders
       // dark for a frame before React reads localStorage, which light-theme
       // users see as a flash.
+      window.__bootAt = Date.now();
       (function () {
         try {
           var t = localStorage.getItem('portfolio-theme');

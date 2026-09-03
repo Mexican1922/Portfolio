@@ -10,9 +10,22 @@ import HomePage from './pages/HomePage'
 // The landing page stays in the main bundle — it is what most visitors arrive
 // on, and splitting it would put a loading state in front of the first paint.
 // The rest are split out, so they cost nothing until someone navigates.
-const ProjectsPage = lazy(() => import('./pages/ProjectsPage'))
-const AboutPage = lazy(() => import('./pages/AboutPage'))
-const ContactPage = lazy(() => import('./pages/ContactPage'))
+// How long the loader stays up on a route change, in ms. The chunks resolve in
+// a few milliseconds on a warm connection, so without a floor the loader would
+// flash and vanish. Raising this makes the site slower for no benefit to the
+// reader; 0 disables the hold entirely.
+const MIN_LOADER_MS = 600
+
+/** Hold a lazy import open long enough for the loader to be seen. */
+const withMinDuration = (factory, ms = MIN_LOADER_MS) =>
+  () =>
+    Promise.all([factory(), new Promise((r) => setTimeout(r, ms))]).then(
+      ([mod]) => mod,
+    )
+
+const ProjectsPage = lazy(withMinDuration(() => import('./pages/ProjectsPage')))
+const AboutPage = lazy(withMinDuration(() => import('./pages/AboutPage')))
+const ContactPage = lazy(withMinDuration(() => import('./pages/ContactPage')))
 
 const prefersReducedMotion = () =>
   typeof window !== 'undefined' &&
