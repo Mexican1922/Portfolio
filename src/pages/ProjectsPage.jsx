@@ -135,13 +135,23 @@ export default function ProjectsPage() {
                   <SpotlightCard className="glass-card rounded-2xl overflow-hidden h-full project-card-hover glow-border flex flex-col">
                     {/* Image */}
                     <div className="project-image-wrapper aspect-video relative">
-                      <img
-                        src={project.image}
-                        alt={project.title}
-                        loading="lazy"
-                        decoding="async"
-                        className="w-full h-full object-cover"
-                      />
+                      {project.image ? (
+                        <img
+                          src={project.image}
+                          alt={project.title}
+                          loading="lazy"
+                          decoding="async"
+                          className="w-full h-full object-cover"
+                        />
+                      ) : (
+                        <div className="w-full h-full flex items-center justify-center bg-surface-2 border-b border-border">
+                          <MaterialIcon
+                            name="lock"
+                            size={34}
+                            className="text-text-dim"
+                          />
+                        </div>
+                      )}
                       {/* Badges overlay */}
                       <div className="absolute top-3 left-3 flex gap-2">
                         {project.badge === 'client' && (
@@ -172,18 +182,31 @@ export default function ProjectsPage() {
                     {/* Content */}
                     <div className="p-6 flex flex-col flex-1">
                       <h3 className="font-heading font-bold text-lg text-text mb-2 flex items-center gap-2">
-                        <a
-                          href={project.url}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="inline-flex items-center gap-2 hover:text-accent-light transition-colors"
-                        >
-                          {project.title}
-                          <ExternalLink
-                            size={14}
-                            className="text-text-dim group-hover:text-accent-light transition-colors"
-                          />
-                        </a>
+                        {project.url ? (
+                          <a
+                            href={project.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="inline-flex items-center gap-2 hover:text-accent-light transition-colors"
+                          >
+                            {project.title}
+                            <ExternalLink
+                              size={14}
+                              className="text-text-dim group-hover:text-accent-light transition-colors"
+                            />
+                          </a>
+                        ) : (
+                          // NDA work has nowhere to send anyone, so it stays
+                          // plain text rather than a link to nothing.
+                          <span className="inline-flex items-center gap-2">
+                            {project.title}
+                            <MaterialIcon
+                              name="lock"
+                              size={13}
+                              className="text-text-dim"
+                            />
+                          </span>
+                        )}
                       </h3>
 
                       <p className="text-text-muted text-sm leading-relaxed mb-4 flex-1">

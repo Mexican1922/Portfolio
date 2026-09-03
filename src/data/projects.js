@@ -54,6 +54,16 @@ export const featuredProjects = [
 
 export const otherProjects = [
   {
+    id: "under-nda",
+    title: "Client Work Under NDA",
+    subtitle: "Client Projects — Not Publicly Attributable",
+    description:
+      "Additional production work delivered for clients whose agreements do not permit attribution. No names, screenshots or source — but the stack is the same one every project on this page is built with, and references are available on request.",
+    url: null,
+    tags: ["Client Work", "React", "Django"],
+    badge: "client",
+  },
+  {
     id: "metermate",
     title: "MeterMate",
     description:
